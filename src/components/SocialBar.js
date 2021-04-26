@@ -12,6 +12,7 @@ import linkedin_icon from "../assets/linkedin_icon.png";
 function SocialBar() {
     return (
         <div className="SocialBar">
+                <text>Add me</text>
                 <div className="SocialBar-item" id="facebook">
                     <a href="https://www.facebook.com/zachary.primus/">
                         <img src={fb_icon} height="50px" width="50px" alt="Link to facebook"/>
@@ -24,9 +25,7 @@ function SocialBar() {
                 </div>
                 <div className="SocialBar-item" id="github">
                     <a href="https://github.com/zprimus">
-                        <div>
-                            <img src={github_icon} height="50px" width="50px" alt="Link to github"/>
-                        </div>
+                        <img src={github_icon} height="50px" width="50px" alt="Link to github"/>
                     </a>
                 </div>
         </div>

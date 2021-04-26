@@ -1,0 +1,28 @@
+.SideMenu {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.SideMenu-link {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+.SideMenu-routes {
+    flex: 10;
+}
+
+.SideMenu-footer {
+    color: black;
+    display: flex;
+    flex: 1;
+    position: absolute;
+    bottom: 0;
+}
+
+.SideMenu-icon {
+    flex: 1;
+    padding: 5px;
+}

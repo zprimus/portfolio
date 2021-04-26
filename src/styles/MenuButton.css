@@ -1,0 +1,10 @@
+rect {
+    width: 100px;
+    height: 15px;
+}
+
+button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

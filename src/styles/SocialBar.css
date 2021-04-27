@@ -1,8 +1,7 @@
 .SocialBar {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    width: 4vw;
 }
 
 .SocialBar-item {
@@ -12,14 +11,34 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    transition: transform .5s
-                cubic-bezier(0, .52, 0, 1);
-    transform: translate3d(-20px, 0, 0);
-} 
+}
 
-.SocialBar-item:hover {
-    transform: translate3d(0, 0, 0);
-} 
+@media screen and (min-width: 800px) {
+    .SocialBar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80px;
+    }
+
+    .SocialBar-item {
+        flex: 1;
+        padding: 5px;
+        background-color: black;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        transition: transform .5s
+                    cubic-bezier(0, .52, 0, 1);
+        transform: translate3d(-20px, 0, 0);
+    }
+
+    .SocialBar-item:hover {
+        transform: translate3d(0, 0, 0);
+    } 
+}
+
+
 
 #github {
     background-color: #f5f5f5;
@@ -29,7 +48,15 @@
     background-color: #4267B2;
 }
 
+#twitter {
+    background-color: #1da1f2;
+}
+
+#instagram {
+    background-color: #FFFFFF;
+}
+
 #linkedin {
-    background-color: #0072b1;
+    background-color: #0a66c2;
 }
 

@@ -1,0 +1,38 @@
+.ProjectTile {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.ProjectTile-header {
+    display: flex;
+    align-items: center;
+    color: white;
+    flex: 1;
+    background-color: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.ProjectTile-thumbnail {
+    display: flex;
+    align-items: center;
+    justify-self: baseline;
+    flex: 9;
+    background-color: gray;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.ProjectTile-thumbnail:hover {
+    opacity: 0.5;
+}

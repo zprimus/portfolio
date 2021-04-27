@@ -1,0 +1,26 @@
+.Projects {
+    width: 660px;
+}
+
+.Projects-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.Projects-selector-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.Projects-selector-button {
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.Projects-tile-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

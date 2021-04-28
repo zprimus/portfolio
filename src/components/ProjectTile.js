@@ -11,9 +11,7 @@ function ProjectTile(props) {
                 <text>{props.name}</text>
             </div>
             <div className="ProjectTile-thumbnail">
-                <div>
-                    <img src={props.pic} alt={props.pic_desc}/>
-                </div>
+                <img src={props.pics[0]} alt={props.pic_desc}/>
             </div>
         </div>
     );

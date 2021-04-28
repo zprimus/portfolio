@@ -2,14 +2,14 @@
 import React from 'react';
 
 // styles
-import '../styles/Career.css';
+import '../styles/Explore.css';
 
-function Career() {
+function Explore() {
     return (
       <div>
-          Career
+          Explore
       </div>
     );
   }
 
-export default Career;
+export default Explore;

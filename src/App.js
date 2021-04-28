@@ -13,10 +13,10 @@ import Menu from './components/Menu.js';
 
 // routes
 import Home from './routes/Home.js';
-import Travel from './routes/Travel.js';
-import Career from './routes/Career.js';
-import AboutMe from './routes/AboutMe.js';
 import Projects from './routes/Projects.js';
+import ProjectTemplate from './routes/ProjectTemplate';
+import Explore from './routes/Explore.js';
+import Contact from './routes/Contact.js';
 
 class App extends React.Component {
   constructor() {
@@ -43,7 +43,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App"> 
+      <div className="App">
         <div className="App-menubutton">
           <MenuButton
             handleClickMenu={this.handleClickMenu}
@@ -54,10 +54,10 @@ class App extends React.Component {
           <div className="App-body">
             <Switch>
               <Route path="/" exact component={Home}/>
-              <Route path="/travel" exact component={Travel}/>
-              <Route path="/career" exact component={Career}/>
-              <Route path="/aboutme" exact component={AboutMe}/>
               <Route path="/projects" exact component={Projects}/>
+              <Route path="/projects?id=:id" component={ProjectTemplate}/>
+              <Route path="/explore" exact component={Explore}/>
+              <Route path="/contact" exact component={Contact}/>
             </Switch>
           </div>
           <Menu
@@ -68,11 +68,6 @@ class App extends React.Component {
         <div className="App-social">
           <SocialBar/>
         </div>
-        
-        
-        <footer className="App-footer">
-          *Footer* Made with React.
-        </footer>
       </div>
     );
   }

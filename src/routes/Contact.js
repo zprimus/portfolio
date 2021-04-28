@@ -2,14 +2,14 @@
 import React from 'react';
 
 // styles
-import '../styles/Travel.css';
+import '../styles/Contact.css';
 
-function Travel() {
+function Contact() {
     return (
       <div>
-          Travel
+          Contact
       </div>
     );
   }
 
-export default Travel;
+export default Contact;

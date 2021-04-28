@@ -22,12 +22,6 @@ class Menu extends React.Component {
 
         return (
             <nav id="Menu" className={visibility}>
-                <div className="Menu-menubutton">
-                    <MenuButton
-                        handleClickMenu={this.props.handleClickMenu}
-                        showMenu={this.props.showMenu}
-                    />
-                </div>
                 <div className="Menu-routes">
                     <Link to="/" style={{ textDecoration: 'none' }} onClick={this.props.handleClickMenu}>
                         <div className="Menu-link">
@@ -39,19 +33,14 @@ class Menu extends React.Component {
                             <h2>Projects</h2>
                         </div>
                     </Link>
-                    <Link to ="/career" style={{ textDecoration: 'none' }} onClick={this.props.handleClickMenu}>
+                    <Link to ="/explore" style={{ textDecoration: 'none' }} onClick={this.props.handleClickMenu}>
                         <div className="Menu-link">
-                            <h2>Career</h2>
+                            <h2>Explore</h2>
                         </div>
                     </Link>
-                    <Link to ="/aboutme" style={{ textDecoration: 'none' }} onClick={this.props.handleClickMenu}>
+                    <Link to ="/contact" style={{ textDecoration: 'none' }} onClick={this.props.handleClickMenu}>
                         <div className="Menu-link">
-                            <h2>About Me</h2>
-                        </div>
-                    </Link>
-                    <Link to ="/travel" style={{ textDecoration: 'none' }} onClick={this.props.handleClickMenu}>
-                        <div className="Menu-link">
-                            <h2>Travel</h2>
+                            <h2>Contact</h2>
                         </div>
                     </Link>
                 </div>

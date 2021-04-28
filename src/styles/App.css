@@ -7,31 +7,23 @@
   min-height: 100vh;
 }
 
-.App-social {
-  margin: auto;
-  position: absolute;
-  left: 0;
-  bottom: 10%;
+@media screen and (min-width: 0px) and (max-width: 799px) {
+  .App-social {
+    margin: auto;
+    position: relative;
+    left: 0;
+    bottom: 0;
+  }
 }
 
 @media screen and (min-width: 800px) {
   .App-social {
     margin: auto;
-    position: absolute;
+    position: fixed;
+    top: 50%;
     left: 0;
-    bottom: 35%;
+    transform: translateY(-50%);
   }
-}
-
-.App-body {
-  flex: 30;
-}
-
-.App-footer {
-  align-self: stretch;
-  background-color: #2a2a2a;
-  color: #FFFFFF;
-  flex: 1;
 }
 
 .App-menubutton {
@@ -40,4 +32,9 @@
   right: 0;
   top: 0;
   padding:3%;
+  z-index: 1000;
+}
+
+.App-body {
+  
 }

@@ -14,7 +14,7 @@ import Menu from './components/Menu.js';
 // routes
 import Home from './routes/Home.js';
 import Projects from './routes/Projects.js';
-import ProjectTemplate from './routes/ProjectTemplate';
+import ProjectTemplate from './routes/ProjectTemplate.js';
 import Explore from './routes/Explore.js';
 import Contact from './routes/Contact.js';
 
@@ -55,7 +55,7 @@ class App extends React.Component {
             <Switch>
               <Route path="/" exact component={Home}/>
               <Route path="/projects" exact component={Projects}/>
-              <Route path="/projects?id=:id" component={ProjectTemplate}/>
+              <Route path="/projects?id=:id" exact component={ProjectTemplate}/>
               <Route path="/explore" exact component={Explore}/>
               <Route path="/contact" exact component={Contact}/>
             </Switch>

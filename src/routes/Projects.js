@@ -8,16 +8,11 @@ import '../styles/Projects.css';
 // components
 import ProjectTile from '../components/ProjectTile.js';
 
+// data
+import projects from '../data/projects.js';
+import tags from '../data/tags.js';
+
 // assets
-import pic_gd_0 from '../assets/generic-website-pic.png';
-import pic_gd_1 from '../assets/generic-website-pic.png';
-import pic_gd_2 from '../assets/generic-website-pic.png';
-import pic_cac_0 from '../assets/generic-website-pic.png';
-import pic_cac_1 from '../assets/generic-website-pic.png';
-import pic_cac_2 from '../assets/generic-website-pic.png';
-import pic_port_0 from '../assets/generic-website-pic.png';
-import pic_port_1 from '../assets/generic-website-pic.png';
-import pic_port_2 from '../assets/generic-website-pic.png';
 
 class Projects extends React.Component {
   constructor(props) {
@@ -25,70 +20,8 @@ class Projects extends React.Component {
 
     this.state = {
       tagSelector: "All",
-      projects: [
-        {
-          id: 'gooddeed',
-          name: 'GoodDeed',
-          short_desc: 'short desc',
-          desc: 'desc',
-          skills: [],
-          link: '',
-          pics: [
-            pic_gd_0,
-            pic_gd_1,
-            pic_gd_2
-          ],
-          pic_desc: 'Pic of GoodDeed app'
-        },
-        {
-          id: 'collect-a-cop',
-          name: 'Collect-a-Cop',
-          description: '',
-          skills: [],
-          link: '',
-          pics: [
-            pic_cac_0,
-            pic_cac_1,
-            pic_cac_2
-          ],
-          pic_desc: 'Pic of Collect-a-Cop app'
-        },
-        {
-          id: 'portfolio',
-          name: 'Portfolio',
-          description: '',
-          skills: [],
-          link: '',
-          pics: [
-            pic_port_0,
-            pic_port_1,
-            pic_port_2
-          ],
-          pic_desc: 'Pic of Portfolio app'
-        }
-      ],
-      
     }
   }
-
-  tagSelectors = [
-    'All',
-    'AutoCAD',
-    'CSS',
-    'Express',
-    'FactoryTalk ME',
-    'HTML5',
-    'Ignition',
-    'JavaScript',
-    'MongoDB', 
-    'MySQL',
-    'NodeJS',
-    'Python',
-    'React',
-    'React Native',
-    'RSLogix 5000',
-    'Visio',
-  ];
 
   handleSelectorChange = (selector) => {
     this.setState({tagSelector: selector})
@@ -98,11 +31,11 @@ class Projects extends React.Component {
 
   renderSelectors() {
     return(
-      this.tagSelectors.map((selector) => (
+      tags.map((selector) => (
         selector === this.state.tagSelector ? (
-          <button style={{backgroundColor: 'black', color: 'white'}} className="Projects-selector-button" onMouseDown={() => this.handleSelectorChange(selector)}>{selector}</button>
+          <button key={selector} style={{backgroundColor: 'black', color: 'white'}} className="Projects-selector-button" onMouseDown={() => this.handleSelectorChange(selector)}>{selector}</button>
         ) : (
-          <button className="Projects-selector-button" onMouseDown={() => this.handleSelectorChange(selector)}>{selector}</button>
+          <button key={selector} className="Projects-selector-button" onMouseDown={() => this.handleSelectorChange(selector)}>{selector}</button>
         )
       ))
     )
@@ -110,15 +43,9 @@ class Projects extends React.Component {
 
   renderProjectTiles() {
     return(
-      this.state.projects.map((project) => (
-        <div>
-          <Link 
-            to={{
-              pathname: `/projects?id=${project.id}`,
-              state: project
-            }} 
-            style={{ textDecoration: 'none' }}
-          >
+      projects.map((project) => (
+        <div key={project.id}>
+          <Link to={{ pathname: `/projects?id=${project.id}`}}>
             <ProjectTile
               name={project.name}
               pics={project.pics}
@@ -139,7 +66,7 @@ class Projects extends React.Component {
           <div className = "Projects-selector-container">
               {this.renderSelectors()}
           </div>
-          <text>Select a skill that I used for the project.</text>
+          <p>Select a skill that I used for the project.</p>
           <div className = "Projects-tile-container">
               {this.renderProjectTiles()}
           </div>

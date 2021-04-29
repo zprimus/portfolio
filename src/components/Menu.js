@@ -5,9 +5,6 @@ import { Link } from 'react-router-dom';
 // styles
 import '../styles/Menu.css';
 
-// components
-import MenuButton from './MenuButton.js';
-
 class Menu extends React.Component {
     constructor(props) {
         super(props);

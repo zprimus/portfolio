@@ -1,0 +1,48 @@
+.App {
+  align-items: center;
+  background-color: #D3D3D3;
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media screen and (min-width: 0px) and (max-width: 799px) {
+  .App-social {
+    margin: auto;
+    position: relative;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .App-social {
+    margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+}
+
+.App-menubutton {
+  margin: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 3%;
+  z-index: 1000;
+}
+
+.App-body {
+  
+}
+
+p {
+  font-size: larger;
+}
+
+li {
+  font-size: larger;
+}

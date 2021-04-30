@@ -1,0 +1,54 @@
+#Menu {
+    background-color: #696969;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform 0.7s
+                cubic-bezier(0, .52, 0, 1);
+    overflow: hidden;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+#Menu.hide {
+    transform: translate3d(0, -100vh, 0);
+}
+
+#Menu.show {
+    transform: translate3d(0vw, 0, 0);
+    overflow: hidden;
+    opacity: 1;
+}
+
+.Menu-link {
+    background-color: black;
+    color: white;
+    margin: 10px;
+    height: 10vh;
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.Menu-routes {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.Menu-menubutton {
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding:3%;
+}

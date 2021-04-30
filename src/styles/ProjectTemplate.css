@@ -1,0 +1,47 @@
+.ProjectTemplate {
+    min-height: 90vh;
+    width: 800px;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.ProjectTemplate img {
+    width: 100%;
+    height: 100%;
+    filter: brightness(80%);
+}
+
+.ProjectTemplate-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.ProjectTemplate-links-share {
+    display: flex;
+    flex-direction: row;
+}
+
+.ProjectTemplate-links-share button {
+    margin-left: 10px;
+}
+
+hr {
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+    height: 1px;
+    width: 50%;
+    background-color: #484848;
+    position: relative;
+    border: 0;
+    margin: .5em 0 1em;
+}

@@ -1,25 +1,77 @@
-import logo from './logo.svg';
-import './App.css';
+// dependencies
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// styles
+import './styles/App.css';
+
+// components
+//import SideMenu from './components/SideMenu.js';
+import SocialBar from './components/SocialBar.js';
+import MenuButton from './components/MenuButton.js';
+import Menu from './components/Menu.js';
+
+// routes
+import Home from './routes/Home.js';
+import Projects from './routes/Projects.js';
+import ProjectTemplate from './routes/ProjectTemplate.js';
+import Explore from './routes/Explore.js';
+import Contact from './routes/Contact.js';
+
+class App extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      showMenu: false,
+    }
+
+    this.toggleMenu = this.toggleMenu.bind(this);
+    this.handleClickMenu = this.handleClickMenu.bind(this);
+  }
+
+  toggleMenu = () => {
+    this.setState({showMenu: !this.state.showMenu});
+  }
+
+  handleClickMenu = () => {
+    this.toggleMenu();
+
+    console.log("showMenu: " + this.state.showMenu);
+    //e.stopPropagation();
+  }
+
+  render() {
+    return (
+      <div className="App">
+        
+        <Router>
+          <div className="App-body">
+            <Switch>
+              <Route path="/" exact component={Home}/>
+              <Route path="/projects" exact component={Projects}/>
+              <Route path="/projects?id=:id" exact component={ProjectTemplate}/>
+              <Route path="/explore" exact component={Explore}/>
+              <Route path="/contact" exact component={Contact}/>
+            </Switch>
+          </div>
+          <div className="App-menubutton">
+            <MenuButton
+              handleClickMenu={this.handleClickMenu}
+              showMenu={this.state.showMenu}
+            />
+          </div>
+          <Menu
+            handleClickMenu={this.handleClickMenu}
+            showMenu={this.state.showMenu}
+          />
+        </Router>
+        <div className="App-social">
+          <SocialBar/>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

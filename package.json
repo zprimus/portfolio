@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "homepage": "https://zprimus.github.io/portfolio",
+  "homepage": "http://zprimus.github.io/portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

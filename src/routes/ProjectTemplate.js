@@ -15,10 +15,49 @@ function ProjectTemplate() {
 
     return(
         <div className="ProjectTemplate">
-            <h2>
-                {project.name}
-            </h2>
-            <p>{project.short_desc}</p>
+            <header>
+                <div className="ProjectTemplate-title">
+                    <h1>{project.name}</h1>
+                    <p>{project.overview}</p>
+                </div>
+                <div className="ProjectTemplate-links">
+                    <div className="ProjectTemplate-links-link">
+                        <button>{project.link === '' ? 'No Link Active' : 'Go to Project!'}</button>
+                    </div>
+                    <div className="ProjectTemplate-links-share">
+                        <button>fb</button>
+                        <button>tweet</button>
+                    </div>
+                </div>
+            </header>
+            <body>
+                <section>
+                    <img
+                        src={project.pics[0]}
+                        alt={project.pic_desc}
+                    />
+                </section>
+                <section>
+                    <h2>Project Description</h2>
+                    <hr/>
+                    <p>{project.desc1}</p>
+                    <p>{project.desc2}</p>
+                </section>
+                <section>
+                    <h2>Technical Sheet</h2>
+                    <p>Technologies and skills that I used for the project.</p>
+                    <hr/>
+                    <ul>
+                        {
+                            project.skills.map(skill => (
+                                <li>{skill}</li>
+                            ))
+                        }
+                    </ul>
+                </section>
+            </body>
+            <footer>
+            </footer>
         </div>
     );
 }

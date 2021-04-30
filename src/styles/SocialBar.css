@@ -11,9 +11,10 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    height: 50px;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
     .SocialBar {
         display: flex;
         flex-direction: column;
@@ -36,9 +37,27 @@
     .SocialBar-item:hover {
         transform: translate3d(0, 0, 0);
     } 
+
+    #twitter img {
+        padding-right: 5px;
+    }
+
+    #linkedin img {
+        padding-right: 5px;
+    }
+
+    #instagram img {
+        padding-right: 5px;
+    }
 }
 
 
+.SocialBar-item img {
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 #github {
     background-color: #f5f5f5;
@@ -52,8 +71,9 @@
     background-color: #1da1f2;
 }
 
+
 #instagram {
-    background-color: #FFFFFF;
+    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
 }
 
 #linkedin {

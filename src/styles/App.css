@@ -28,7 +28,7 @@
 
 .App-menubutton {
   margin: auto;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   padding: 3%;
@@ -37,4 +37,12 @@
 
 .App-body {
   
+}
+
+p {
+  font-size: larger;
+}
+
+li {
+  font-size: larger;
 }

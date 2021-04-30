@@ -1,11 +1,18 @@
-rect {
+.MenuButton rect {
     width: 100px;
     height: 15px;
+    
 }
 
-button {
+.App-menubutton button {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
+    border: 0px;
+}
+
+button:hover {
+    cursor: pointer;
 }

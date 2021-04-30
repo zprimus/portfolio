@@ -44,12 +44,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div className="App-menubutton">
-          <MenuButton
-            handleClickMenu={this.handleClickMenu}
-            showMenu={this.state.showMenu}
-          />
-        </div>
+        
         <Router>
           <div className="App-body">
             <Switch>
@@ -59,6 +54,12 @@ class App extends React.Component {
               <Route path="/explore" exact component={Explore}/>
               <Route path="/contact" exact component={Contact}/>
             </Switch>
+          </div>
+          <div className="App-menubutton">
+            <MenuButton
+              handleClickMenu={this.handleClickMenu}
+              showMenu={this.state.showMenu}
+            />
           </div>
           <Menu
             handleClickMenu={this.handleClickMenu}

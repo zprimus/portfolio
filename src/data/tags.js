@@ -9,11 +9,13 @@ const tags = [
     'JavaScript',
     'MongoDB', 
     'MySQL',
+    'Network Architecture',
     'NodeJS',
     'Python',
     'React',
     'React Native',
     'RSLogix 5000',
+    'SCADA',
     'Visio',
   ];
 

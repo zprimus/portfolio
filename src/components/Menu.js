@@ -35,11 +35,9 @@ class Menu extends React.Component {
                             <h2>Explore</h2>
                         </div>
                     </Link>
-                    <Link to ="/contact" style={{ textDecoration: 'none' }} onClick={this.props.handleClickMenu}>
-                        <div className="Menu-link">
-                            <h2>Contact</h2>
-                        </div>
-                    </Link>
+                    <p>
+                        Feel free to contact me at <b>zachary_primus@yahoo.com</b>
+                    </p>
                 </div>
             </nav>
         );

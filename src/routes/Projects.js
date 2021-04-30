@@ -12,8 +12,6 @@ import ProjectTile from '../components/ProjectTile.js';
 import projects from '../data/projects.js';
 import tags from '../data/tags.js';
 
-// assets
-
 class Projects extends React.Component {
   constructor(props) {
     super(props);
@@ -25,8 +23,6 @@ class Projects extends React.Component {
 
   handleSelectorChange = (selector) => {
     this.setState({tagSelector: selector})
-
-    console.log(this.state.tagSelector)
   }
 
   renderSelectors() {
@@ -42,17 +38,22 @@ class Projects extends React.Component {
   }
 
   renderProjectTiles() {
+    let filteredProjects;
+    this.state.tagSelector==='All' ?
+    filteredProjects = projects :
+    filteredProjects = projects.filter(project => project.skills.find(tag => tag===this.state.tagSelector));
+
     return(
-      projects.map((project) => (
-        <div key={project.id}>
-          <Link to={{ pathname: `/projects?id=${project.id}`}}>
-            <ProjectTile
-              name={project.name}
-              pics={project.pics}
-              pic_desc={project.pic_desc}
-            />
-          </Link>
-        </div>
+      filteredProjects.map((project) => (
+          <div key={project.id}>
+            <Link to={{ pathname: `/projects?id=${project.id}`}}>
+              <ProjectTile
+                name={project.name}
+                pics={project.pics}
+                pic_desc={project.pic_desc}
+              />
+            </Link>
+          </div>
       ))
     )
   }
@@ -61,12 +62,14 @@ class Projects extends React.Component {
     return (
       <div className = "Projects">
           <div className = "Projects-header">
-            <h4>My finished projects are here. Check them out!</h4>
+            <h2>My finished projects are here. Check them out!</h2>
           </div>
           <div className = "Projects-selector-container">
               {this.renderSelectors()}
           </div>
+          
           <p>Select a skill that I used for the project.</p>
+          <hr/>
           <div className = "Projects-tile-container">
               {this.renderProjectTiles()}
           </div>

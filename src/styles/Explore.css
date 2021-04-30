@@ -1,0 +1,9 @@
+.Explore {
+    min-height: 100vh;
+    min-width: 1000px;
+}
+
+.Explore-map {
+    border-width: 2px;
+    stroke: #d4f1f9;
+}

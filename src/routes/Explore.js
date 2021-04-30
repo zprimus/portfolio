@@ -4,12 +4,22 @@ import React from 'react';
 // styles
 import '../styles/Explore.css';
 
-function Explore() {
+// components
+import MapChart from '../components/MapChart.js';
+
+class Explore extends React.Component {
+  render() {
     return (
-      <div>
-          Explore
+      <div className="Explore">
+        <div className="Explore-map">
+          <MapChart/>
+        </div>
+        <body>
+          
+        </body>
       </div>
     );
   }
+}
 
 export default Explore;

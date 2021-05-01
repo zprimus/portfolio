@@ -1,5 +1,5 @@
 .Projects {
-    width: 800px;
+    width: 100vh;
     min-height: 90vh;
     padding-top: 5vh;
     padding-bottom: 5vh;
@@ -17,11 +17,27 @@
     flex-wrap: wrap;
 }
 
+
 .Projects-selector-button {
     padding: 10px;
     margin-right: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+#selected {
+    background-color: #66FCF1; 
+    color: #0B0C10;
+    border-color: #45A29E;
+}
+
+#not_selected {
+    background-color: #0B0C10; 
+    color: #45A29E;
+    border-color: #45A29E;
 }
 
 .Projects-tile-container {

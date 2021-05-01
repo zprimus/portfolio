@@ -7,6 +7,17 @@ import '../styles/ProjectTemplate.css';
 // data
 import projects from '../data/projects.js';
 
+// assets
+import fb_icon from '../assets/icons/fb_icon.svg';
+import twitter_icon from '../assets/icons/twitter_icon.svg';
+
+// components
+import BackButton from '../components/BackButton.js';
+
+function handleClickBack() {
+    
+}
+
 function ProjectTemplate() {
     let params = new URLSearchParams(document.location.search.substring(1));
     let id = params.get("id");
@@ -16,6 +27,12 @@ function ProjectTemplate() {
     return(
         <div className="ProjectTemplate">
             <header>
+                <div className="ProjectTemplate-backbutton">
+                    <BackButton
+                        handleClick={handleClickBack}
+                        url='/projects'
+                    />
+                </div>
                 <div className="ProjectTemplate-title">
                     <h1>{project.name}</h1>
                     <p>{project.overview}</p>
@@ -25,8 +42,12 @@ function ProjectTemplate() {
                         <button>{project.link === '' ? 'No Link Active' : 'Go to Project!'}</button>
                     </div>
                     <div className="ProjectTemplate-links-share">
-                        <button>fb</button>
-                        <button>tweet</button>
+                        <button id="facebook">
+                            <img src={fb_icon} alt="Share to Facebook"/>
+                        </button>
+                        <button id="twitter">
+                            <img src={twitter_icon} alt="Share to Facebook"/>
+                        </button>
                     </div>
                 </div>
             </header>

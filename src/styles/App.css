@@ -1,29 +1,13 @@
+
+
 .App {
   align-items: center;
-  background-color: #D3D3D3;
+  background-color: #0B0C10;
   display: flex;
   flex-basis: 100%;
   flex-direction: column;
   min-height: 100vh;
-}
-
-@media screen and (min-width: 0px) and (max-width: 799px) {
-  .App-social {
-    margin: auto;
-    position: relative;
-    left: 0;
-    bottom: 0;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  .App-social {
-    margin: auto;
-    position: fixed;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-  }
+  color: #C5C6C7;
 }
 
 .App-menubutton {
@@ -35,14 +19,31 @@
   z-index: 1000;
 }
 
+.App-menubutton button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0px;
+}
+
 .App-body {
-  
 }
 
 p {
   font-size: larger;
+  color: "#C5C6C7"
 }
 
 li {
   font-size: larger;
+}
+
+h1 {
+  color: #66FCF1;
+}
+
+h2 {
+  color: #66FCF1;
 }

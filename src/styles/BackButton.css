@@ -1,0 +1,13 @@
+.BackButton #straight {
+    width: 100px;
+    height: 15px;
+}
+.BackButton #arrow {
+    width: 50px;
+    height: 15px;
+}
+
+
+button:hover {
+    cursor: pointer;
+}

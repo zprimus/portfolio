@@ -1,7 +1,8 @@
 // pics
-import pic_port_0 from '../assets/pic_port_0.PNG';
+import pic_port_0 from '../assets/projects/pic_port_0.PNG';
 
-import pic_p41_1 from '../assets/pic_p41_1.png';
+import pic_p41_0 from '../assets/projects/pic_p41_0.png';
+import pic_p41_1 from '../assets/projects/pic_p41_1.png';
 
 // desc1 = made for who, what was involved
 // desc2 = what i did, challenges
@@ -42,6 +43,7 @@ const projects = [
     ],
     link: '',
     pics: [
+      pic_p41_0,
       pic_p41_1
     ],
     pic_desc: 'Pic of GoodDeed app'

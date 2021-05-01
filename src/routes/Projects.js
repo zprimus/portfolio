@@ -29,9 +29,9 @@ class Projects extends React.Component {
     return(
       tags.map((selector) => (
         selector === this.state.tagSelector ? (
-          <button key={selector} style={{backgroundColor: 'black', color: 'white'}} className="Projects-selector-button" onMouseDown={() => this.handleSelectorChange(selector)}>{selector}</button>
+          <button key={selector} className="Projects-selector-button" id="selected" onMouseDown={() => this.handleSelectorChange(selector)}>{selector}</button>
         ) : (
-          <button key={selector} className="Projects-selector-button" onMouseDown={() => this.handleSelectorChange(selector)}>{selector}</button>
+          <button key={selector} className="Projects-selector-button" id="not_selected" onMouseDown={() => this.handleSelectorChange(selector)}>{selector}</button>
         )
       ))
     )

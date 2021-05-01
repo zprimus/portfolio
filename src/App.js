@@ -6,8 +6,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './styles/App.css';
 
 // components
-//import SideMenu from './components/SideMenu.js';
-import SocialBar from './components/SocialBar.js';
 import MenuButton from './components/MenuButton.js';
 import Menu from './components/Menu.js';
 
@@ -66,9 +64,6 @@ class App extends React.Component {
             showMenu={this.state.showMenu}
           />
         </Router>
-        <div className="App-social">
-          <SocialBar/>
-        </div>
       </div>
     );
   }

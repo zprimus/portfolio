@@ -18,69 +18,117 @@ function handleClickBack() {
     
 }
 
-function ProjectTemplate() {
-    let params = new URLSearchParams(document.location.search.substring(1));
-    let id = params.get("id");
-    let project = projects.filter(entry => Object.values(entry).some(val => typeof val === "string" && val.includes(id)));
-    project = project[0]
+class ProjectTemplate extends React.Component {
+    constructor() {
+        super();
+        
+        this.state = {
+            imageSelector: 0,
+        }
+    }
 
-    return(
-        <div className="ProjectTemplate">
-            <header>
-                <div className="ProjectTemplate-backbutton">
-                    <BackButton
-                        handleClick={handleClickBack}
-                        url='/projects'
-                    />
-                </div>
-                <div className="ProjectTemplate-title">
-                    <h1>{project.name}</h1>
-                    <p>{project.overview}</p>
-                </div>
-                <div className="ProjectTemplate-links">
-                    <div className="ProjectTemplate-links-link">
-                        <button>{project.link === '' ? 'No Link Active' : 'Go to Project!'}</button>
+    params = new URLSearchParams(document.location.search.substring(1));
+    id = this.params.get("id");
+    project = projects.filter(entry => Object.values(entry).some(val => typeof val === "string" && val.includes(this.id)));
+    project = this.project[0]
+
+    handleImageSelector = (pos) => {
+        this.setState({imageSelector: pos})
+    }
+
+    render() {
+        return(
+            <div className="ProjectTemplate">
+                <header>
+                    <div className="ProjectTemplate-backbutton">
+                        <BackButton
+                            handleClick={handleClickBack}
+                            url='/projects'
+                        />
                     </div>
-                    <div className="ProjectTemplate-links-share">
-                        <button id="facebook">
-                            <img src={fb_icon} alt="Share to Facebook"/>
-                        </button>
-                        <button id="twitter">
-                            <img src={twitter_icon} alt="Share to Facebook"/>
-                        </button>
+                    <div className="ProjectTemplate-title">
+                        <h1>{this.project.name}</h1>
+                        <p>{this.project.overview}</p>
                     </div>
-                </div>
-            </header>
-            <body>
-                <section>
-                    <img
-                        src={project.pics[0]}
-                        alt={project.pic_desc}
-                    />
-                </section>
-                <section>
-                    <h2>Project Description</h2>
-                    <hr/>
-                    <p>{project.desc1}</p>
-                    <p>{project.desc2}</p>
-                </section>
-                <section>
-                    <h2>Technical Sheet</h2>
-                    <p>Technologies and skills that I used for the project.</p>
-                    <hr/>
-                    <ul>
-                        {
-                            project.skills.map(skill => (
-                                <li>{skill}</li>
-                            ))
-                        }
-                    </ul>
-                </section>
-            </body>
-            <footer>
-            </footer>
-        </div>
-    );
+                    <div className="ProjectTemplate-links">
+                        <div className="ProjectTemplate-links-link">
+                            <button>{this.project.link === '' ? 'No Link Active' : 'Go to Project!'}</button>
+                        </div>
+                        <div className="ProjectTemplate-links-share">
+                            <button id="facebook">
+                                <img src={fb_icon} alt="Share to Facebook"/>
+                            </button>
+                            <button id="twitter">
+                                <img src={twitter_icon} alt="Share to Facebook"/>
+                            </button>
+                        </div>
+                    </div>
+                </header>
+                <body>
+                    <section>
+                        <div className="ProjectTemplate-slider">
+                            <div>
+                                <img
+                                    src={this.project.pics[this.state.imageSelector].pic}
+                                    alt={this.project.pics[this.state.imageSelector].alt}
+                                />
+                            </div>
+                            <div className="ProjectTemplate-slider-bullets">
+                                {
+                                    this.project.pics.map((pic) =>
+                                        (
+                                            <div key={pic.pos} id="outer-circle" onClick={() => this.handleImageSelector(pic.pos)}>  
+                                            {
+                                                this.state.imageSelector === pic.pos &&
+                                                <div id="inner-circle">
+                                                </div>
+                                            }
+                                            </div>
+                                        )
+                                    )
+                                }
+                                
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Project Description</h2>
+                        <hr/>
+                        <p>{this.project.desc1}</p>
+                        <p>{this.project.desc2}</p>
+                    </section>
+                    <section>
+                        <h2>Technical Sheet</h2>
+                        <p>Technologies and skills that I used for the project.</p>
+                        <hr/>
+                        <ul>
+                            {
+                                this.project.skills.map(skill => (
+                                    <li>{skill}</li>
+                                ))
+                            }
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Resources</h2>
+                        <hr/>
+                        <ul>
+                            { 
+                                this.project.resources.length !== 0 ?
+                                (
+                                    this.project.resources.map(resource => (
+                                        <li>{resource.text} <a href={resource.link} style={{ textDecoration: 'none' }}>{resource.link}</a></li>
+                                    ))
+                                ) : (
+                                    <li>N/A</li>
+                                )
+                            }
+                        </ul>
+                    </section>
+                </body>
+            </div>
+        );
+    }
 }
 
 export default ProjectTemplate;

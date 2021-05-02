@@ -22,9 +22,14 @@ const projects = [
     ],
     link: '',
     pics: [
-      pic_port_0
+      {
+        pos: 0,
+        pic: pic_port_0,
+        alt: "Pic of Portfolio app"
+      }
     ],
-    pic_desc: 'Pic of Portfolio app'
+    resources: [
+    ]
   },
   {
     id: 'p41-ephenry',
@@ -43,10 +48,23 @@ const projects = [
     ],
     link: '',
     pics: [
-      pic_p41_0,
-      pic_p41_1
+      {
+        pos: 0,
+        pic: pic_p41_0,
+        alt: "P4.1-EPHenry HMI Home screen"
+      },
+      {
+        pos: 1,
+        pic: pic_p41_1,
+        alt: "P4.1-EPHenry HMI P&ID screen"
+      }
     ],
-    pic_desc: 'Pic of GoodDeed app'
+    resources: [
+      {
+        text: "Visit the company site at",
+        link: "https://www.solidiatech.com/",
+      }
+    ]
   },
   {
     id: 'p321-bramptonbrick',
@@ -66,9 +84,23 @@ const projects = [
     ],
     link: '',
     pics: [
-      pic_port_0
+      {
+        pos: 0,
+        pic: pic_p41_0,
+        alt: "Pic of Brampton"
+      },
+      {
+        pos: 1,
+        pic: pic_p41_1,
+        alt: "Pic of Brampton"
+      }
     ],
-    pic_desc: 'Pic of Collect-a-Cop app'
+    resources: [
+      {
+        text: "Visit the company site at",
+        link: "https://www.solidiatech.com/",
+      }
+    ],
   },
 ];
 

@@ -6,6 +6,7 @@ import '../styles/Explore.css';
 
 // components
 import MapChart from '../components/MapChart.js';
+import ImgSlider from '../components/ImgSlider.js'
 
 class Explore extends React.Component {
   constructor(props) {
@@ -14,17 +15,21 @@ class Explore extends React.Component {
     this.state = {
       location: {
         id: '',
+        name: '',
         marker: {},
         info: {}
-      }
+      },
+      imageSelector: 0,
     }
   }
 
   handleQuery = (location) => {
     console.log(location)
     this.setState({location: location});
+  }
 
-    
+  handleImageSelector = (pos) => {
+    this.setState({imageSelector: pos})
   }
 
   render() {
@@ -42,8 +47,8 @@ class Explore extends React.Component {
               <hr/>
               <section>
                 <div>
-                  <h1>{this.state.location.info.name}</h1>
-                  <p>{this.state.location.info.relation}</p>
+                  <h1>{this.state.location.name}</h1>
+                  <p>{this.state.location.info.summary}</p>
                   <hr/>
                 </div>
                 <div>
@@ -51,14 +56,20 @@ class Explore extends React.Component {
                   
                   <ul>
                     <li>Time spent: {this.state.location.info.duration}</li>
-                    
                   </ul>
                   <hr/>
                 </div>
-                <div>
-                  <h3>img</h3>
-                  <hr/>
-                </div>
+                {
+                  this.state.location.info.imgs.length > 0 &&
+                  <div className={"Explore-slider"}>
+                    <ImgSlider
+                        pics={this.state.location.info.imgs}
+                        imageSelector={this.state.imageSelector}
+                        handleImageSelector={this.handleImageSelector}
+                    />
+                  </div>
+                }
+                
                 <div>
                   <h3>Details</h3>
                   <p>{this.state.location.info.desc1}</p>

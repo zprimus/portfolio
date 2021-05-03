@@ -48,7 +48,7 @@ class MapChart extends React.Component {
             {
               locations.map((location) => (
                 <Link to ="#info" style={{ textDecoration: 'none' }} onClick={() => this.props.handleQuery(location)}>
-                  <Marker key={location.marker.name} coordinates={location.marker.coordinates}
+                  <Marker key={location.name} coordinates={location.marker.coordinates}
                     style={{
                       hover: { outline: "none", fill: "#0B0C10", stroke: "#FFFFFF", strokeWidth: "0.1px", cursor: "pointer"},
                       pressed: { outline: "none", fill: "#0B0C10" },
@@ -75,7 +75,7 @@ class MapChart extends React.Component {
                     }
                       fontSize="8"
                     >
-                      {location.marker.name}
+                      {location.name}
                     </text>
                   </Marker>
                 </Link>

@@ -10,6 +10,15 @@
     
 }
 
+.Explore img {
+    max-width: 800px;
+    max-height: 500px;
+}
+
+.Explore-slider {
+    align-self: center;
+}
+
 #info {
     display: flex;
     flex-direction: column;
@@ -23,5 +32,5 @@ section {
     flex-direction: column;
     flex-wrap: wrap;
     
-    margin-bottom: 5vh;
+    padding-bottom: 5vh;
 }

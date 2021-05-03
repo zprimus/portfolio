@@ -13,6 +13,7 @@ import twitter_icon from '../assets/icons/twitter_icon.svg';
 
 // components
 import BackButton from '../components/BackButton.js';
+import ImgSlider from '../components/ImgSlider.js';
 
 function handleClickBack() {
     
@@ -66,29 +67,12 @@ class ProjectTemplate extends React.Component {
                 </header>
                 <body>
                     <section>
-                        <div className="ProjectTemplate-slider">
-                            <div>
-                                <img
-                                    src={this.project.pics[this.state.imageSelector].pic}
-                                    alt={this.project.pics[this.state.imageSelector].alt}
-                                />
-                            </div>
-                            <div className="ProjectTemplate-slider-bullets">
-                                {
-                                    this.project.pics.map((pic) =>
-                                        (
-                                            <div key={pic.pos} id="outer-circle" onClick={() => this.handleImageSelector(pic.pos)}>  
-                                            {
-                                                this.state.imageSelector === pic.pos &&
-                                                <div id="inner-circle">
-                                                </div>
-                                            }
-                                            </div>
-                                        )
-                                    )
-                                }
-                                
-                            </div>
+                        <div>
+                            <ImgSlider
+                                pics={this.project.pics}
+                                imageSelector={this.state.imageSelector}
+                                handleImageSelector={this.handleImageSelector}
+                            />
                         </div>
                     </section>
                     <section>

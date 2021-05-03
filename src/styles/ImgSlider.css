@@ -1,0 +1,32 @@
+.slider-bullets {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+}
+
+#outer-circle {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    background: #C5C6C7;
+    border-radius: 50%;
+    height:20px;
+    width:20px;
+}
+
+#outer-circle:hover {
+    cursor: pointer;
+}
+
+#inner-circle { 
+    position:absolute;
+    background: #0B0C10;
+    border-radius: 50%;
+    right: 5px;
+    left: 5px;
+    top: 5px;
+    bottom: 5px;
+}

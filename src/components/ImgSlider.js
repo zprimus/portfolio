@@ -10,13 +10,13 @@ function ImgSlider(props) {
 
     return(
         <div>
-            <div>
+            <div className="ImgSlider-img">
                 <img
                     src={img_pics[img_selector].pic}
                     alt={img_pics[img_selector].alt}
                 />
             </div>
-            <div className="slider-bullets">
+            <div className="ImgSlider-slider-bullets">
                 {
                     props.pics.map((pic) =>
                         (

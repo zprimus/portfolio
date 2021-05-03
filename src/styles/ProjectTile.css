@@ -23,6 +23,8 @@
     justify-self: baseline;
     flex: 9;
     background-color: gray;
+    height: 300px;
+    overflow:hidden;
 }
 
 .ProjectTile img {

@@ -1,8 +1,9 @@
 // pics
-import pic_port_0 from '../assets/projects/pic_port_0.PNG';
+import portfolio_0 from '../assets/projects/portfolio/pic_0.PNG';
 
-import pic_p41_0 from '../assets/projects/pic_p41_0.png';
-import pic_p41_1 from '../assets/projects/pic_p41_1.png';
+import ephenry_0 from '../assets/projects/p41-ephenry/pic_0.jpg';
+import ephenry_1 from '../assets/projects/p41-ephenry/pic_1.png';
+import ephenry_2 from '../assets/projects/p41-ephenry/pic_2.png';
 
 // desc1 = made for who, what was involved
 // desc2 = what i did, challenges
@@ -24,7 +25,7 @@ const projects = [
     pics: [
       {
         pos: 0,
-        pic: pic_port_0,
+        pic: portfolio_0,
         alt: "Pic of Portfolio app"
       }
     ],
@@ -50,12 +51,17 @@ const projects = [
     pics: [
       {
         pos: 0,
-        pic: pic_p41_0,
-        alt: "P4.1-EPHenry HMI Home screen"
+        pic: ephenry_0,
+        alt: "P4.1-EPHenry Doors"
       },
       {
         pos: 1,
-        pic: pic_p41_1,
+        pic: ephenry_1,
+        alt: "P4.1-EPHenry HMI Home screen"
+      },
+      {
+        pos: 2,
+        pic: ephenry_2,
         alt: "P4.1-EPHenry HMI P&ID screen"
       }
     ],
@@ -86,14 +92,9 @@ const projects = [
     pics: [
       {
         pos: 0,
-        pic: pic_p41_0,
+        pic: ephenry_0,
         alt: "Pic of Brampton"
       },
-      {
-        pos: 1,
-        pic: pic_p41_1,
-        alt: "Pic of Brampton"
-      }
     ],
     resources: [
       {

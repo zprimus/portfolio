@@ -8,7 +8,7 @@ function ProjectTile(props) {
     return(
         <div className="ProjectTile">
             <div className="ProjectTile-header">
-                <text>{props.name}</text>
+                <div>{props.name}</div>
             </div>
             <div className="ProjectTile-thumbnail">
                 <img src={props.pics[0].pic} alt={props.pics[0].alt}/>

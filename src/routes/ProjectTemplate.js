@@ -1,5 +1,6 @@
 // dependencies
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // styles
 import '../styles/ProjectTemplate.css';
@@ -40,7 +41,7 @@ class ProjectTemplate extends React.Component {
     render() {
         return(
             <div className="ProjectTemplate">
-                <header>
+                <div>
                     <div className="ProjectTemplate-backbutton">
                         <BackButton
                             handleClick={handleClickBack}
@@ -51,21 +52,48 @@ class ProjectTemplate extends React.Component {
                         <h1>{this.project.name}</h1>
                         <p>{this.project.overview}</p>
                     </div>
-                    <div className="ProjectTemplate-links">
-                        <div className="ProjectTemplate-links-link">
-                            <button>{this.project.link === '' ? 'No Link Active' : 'Go to Project!'}</button>
-                        </div>
-                        <div className="ProjectTemplate-links-share">
-                            <button id="facebook">
-                                <img src={fb_icon} alt="Share to Facebook"/>
-                            </button>
-                            <button id="twitter">
-                                <img src={twitter_icon} alt="Share to Facebook"/>
-                            </button>
-                        </div>
-                    </div>
-                </header>
-                <body>
+                    {
+                        this.project.link === '' ? 
+                        (
+                            <div className="ProjectTemplate-links-nolink">
+                                <div className="ProjectTemplate-links-share">
+                                    <button id="facebook">
+                                        <img src={fb_icon} alt="Share to Facebook"/>
+                                    </button>
+                                    <button id="twitter">
+                                        <img src={twitter_icon} alt="Share to Facebook"/>
+                                    </button>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="ProjectTemplate-links">
+                                    <div className="ProjectTemplate-links-link">
+                                        <Link to="/" style={{ textDecoration: 'none' }} onClick={this.props.handleClickMenu}>
+                                            <button
+                                                style={{
+                                                    backgroundColor: "#66FCF1",
+                                                    padding: "5px",
+                                                    borderRadius: "5px"
+                                                }}
+                                            >
+                                                Go to Project!
+                                            </button>
+                                        </Link>
+                                    </div>
+                                
+                                <div className="ProjectTemplate-links-share">
+                                    <button id="facebook">
+                                        <img src={fb_icon} alt="Share to Facebook"/>
+                                    </button>
+                                    <button id="twitter">
+                                        <img src={twitter_icon} alt="Share to Facebook"/>
+                                    </button>
+                                </div>
+                            </div>
+                        )
+                    }
+                </div>
+                <div>
                     <section>
                         <div>
                             <ImgSlider
@@ -88,7 +116,7 @@ class ProjectTemplate extends React.Component {
                         <ul>
                             {
                                 this.project.skills.map(skill => (
-                                    <li>{skill}</li>
+                                    <li key={skill}>{skill}</li>
                                 ))
                             }
                         </ul>
@@ -101,7 +129,7 @@ class ProjectTemplate extends React.Component {
                                 this.project.resources.length !== 0 ?
                                 (
                                     this.project.resources.map(resource => (
-                                        <li>{resource.text} <a href={resource.link} style={{ textDecoration: 'none' }}>{resource.link}</a></li>
+                                        <li key={resource}>{resource.text} <a href={resource.link} style={{ textDecoration: 'none' }}>{resource.link}</a></li>
                                     ))
                                 ) : (
                                     <li>N/A</li>
@@ -109,7 +137,7 @@ class ProjectTemplate extends React.Component {
                             }
                         </ul>
                     </section>
-                </body>
+                </div>
             </div>
         );
     }

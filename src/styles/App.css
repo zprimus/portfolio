@@ -29,19 +29,32 @@
 .App-body {
 }
 
-p {
-  font-size: larger;
-  color: "#C5C6C7"
-}
-
 a {
-  color: "#C5C6C7"
-}
-
-li {
-  font-size: larger;
+  color: "#C5C6C7";
 }
 
 h1, h2, h3, h4 {
   color: #66FCF1;
+}
+
+li {
+  font-size: larger;
+  color: "#C5C6C7";
+}
+
+p {
+  font-size: larger;
+  color: "#C5C6C7";
+}
+
+@media (max-width: 800px) {
+  li {
+    font-size: large;
+    color: "#C5C6C7";
+  }
+  
+  p {
+    font-size: large;
+    color: "#C5C6C7";
+  }
 }

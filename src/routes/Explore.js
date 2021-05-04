@@ -62,9 +62,9 @@ class Explore extends React.Component {
           </div>
           {
             Object.keys(this.state.location.info).length > 0 &&
-            <body id="info">
+            <div id="info">
               <hr/>
-              <section>
+              <div className="Explore-info">
                 <div>
                   <h1>{this.state.location.name}</h1>
                   <p>{this.state.location.info.summary}</p>
@@ -94,8 +94,8 @@ class Explore extends React.Component {
                   <p>{this.state.location.info.desc1}</p>
                   <p>{this.state.location.info.desc2}</p>
                 </div>
-              </section>
-            </body>
+              </div>
+            </div>
           }
       </div>
     );

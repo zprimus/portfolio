@@ -21,17 +21,26 @@ class Projects extends React.Component {
     }
   }
 
+  componentDidMount() {
+    let params = new URLSearchParams(document.location.search.substring(1));
+    let id = params.get("id");
+
+    if(id !== null) {
+
+    }
+  }
+
   handleSelectorChange = (selector) => {
     this.setState({tagSelector: selector})
   }
 
   renderSelectors() {
     return(
-      tags.map((selector) => (
+      tags.map((selector, index) => (
         selector === this.state.tagSelector ? (
-          <button key={selector} className="Projects-selector-button" id="selected" onMouseDown={() => this.handleSelectorChange(selector)}>{selector}</button>
+          <button key={index} className="Projects-selector-button" id="selected" onMouseDown={() => this.handleSelectorChange(selector)}>{selector}</button>
         ) : (
-          <button key={selector} className="Projects-selector-button" id="not_selected" onMouseDown={() => this.handleSelectorChange(selector)}>{selector}</button>
+          <button key={index} className="Projects-selector-button" id="not_selected" onMouseDown={() => this.handleSelectorChange(selector)}>{selector}</button>
         )
       ))
     )
@@ -42,7 +51,7 @@ class Projects extends React.Component {
     this.state.tagSelector==='All' ?
     filteredProjects = projects :
     filteredProjects = projects.filter(project => project.skills.find(tag => tag===this.state.tagSelector));
-
+    
     return(
       filteredProjects.map((project) => (
           <div key={project.id}>

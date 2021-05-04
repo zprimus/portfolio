@@ -26,13 +26,27 @@
     
 }
 
-section {
-    width: 800px;
+.Explore-info {
+    width: 1000px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    
     padding-bottom: 5vh;
+}
+
+@media (max-width: 1100px) {
+    .Explore img {
+        max-width: 80vw;
+        max-height: 500px;
+    }
+
+    .Explore-info {
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding-bottom: 5vh;
+    }
 }
 
 .Explore-clearbutton {

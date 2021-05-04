@@ -34,25 +34,21 @@ class App extends React.Component {
 
   handleClickMenu = () => {
     this.toggleMenu();
-
-    console.log("showMenu: " + this.state.showMenu);
-    //e.stopPropagation();
   }
 
   render() {
     return (
       <div className="App">
-        
         <Router
           basename="/portfolio"
         >
           <div className="App-body">
             <Switch>
-              <Route path="/" exact component={Home}/>
-              <Route path="/projects" exact component={Projects}/>
-              <Route path="/projects?id=:id" exact component={ProjectTemplate}/>
-              <Route path="/explore" exact component={Explore}/>
-              <Route path="/contact" exact component={Contact}/>
+              <Route path="/" exact={true} component={Home}/>
+              <Route path="/projects" exact={true} component={Projects}/>
+              <Route path="/projects?id=:id" component={ProjectTemplate}/>
+              <Route path="/explore" exact={true} component={Explore}/>
+              <Route path="/contact" exact={true} component={Contact}/>
             </Switch>
           </div>
           <div className="App-menubutton">

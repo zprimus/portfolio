@@ -12,6 +12,9 @@ import { HashLink as Link } from 'react-router-hash-link';
 // data
 import locations from '../data/locations.js';
 
+// styles
+import '../styles/MapChart.css';
+
 const geoUrl = "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
 const mapHeight = 500;
@@ -20,7 +23,7 @@ const mapWidth = 1000;
 class MapChart extends React.Component {
   render() {
     return (
-      <div>
+      <div className="MapChart">
         <ComposableMap
           height={mapHeight}
           width={mapWidth}
@@ -50,7 +53,8 @@ class MapChart extends React.Component {
                 <Link to ="#info" style={{ textDecoration: 'none' }} onClick={() => this.props.handleQuery(location)}>
                   <Marker key={location.name} coordinates={location.marker.coordinates}
                     style={{
-                      hover: { outline: "none", fill: "#0B0C10", stroke: "#FFFFFF", strokeWidth: "0.1px", cursor: "pointer"},
+                      default: { outline: "none", fill: "#66FCF1", stroke: "#FFFFFF", strokeWidth: "0.1px", cursor: "pointer"},
+                      hover: { outline: "none", fill: "#66FCF1", stroke: "#FFFFFF", strokeWidth: "0.1px", cursor: "pointer"},
                       pressed: { outline: "none", fill: "#0B0C10" },
                     }}
                   >

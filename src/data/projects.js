@@ -1,9 +1,14 @@
 // pics
 import portfolio_0 from '../assets/projects/portfolio/pic_0.PNG';
+import portfolio_1 from '../assets/projects/portfolio/pic_1.PNG';
 
 import ephenry_0 from '../assets/projects/p41-ephenry/pic_0.jpg';
 import ephenry_1 from '../assets/projects/p41-ephenry/pic_1.png';
 import ephenry_2 from '../assets/projects/p41-ephenry/pic_2.png';
+
+import brampton_0 from '../assets/projects/p321-brampton/pic_0.jpg';
+import brampton_1 from '../assets/projects/p321-brampton/pic_1.jpg';
+import brampton_2 from '../assets/projects/p321-brampton/pic_2.jpg';
 
 // desc1 = made for who, what was involved
 // desc2 = what i did, challenges
@@ -26,7 +31,12 @@ const projects = [
       {
         pos: 0,
         pic: portfolio_0,
-        alt: "Pic of Portfolio app"
+        alt: "Homepage"
+      },
+      {
+        pos: 1,
+        pic: portfolio_1,
+        alt: "Homepage"
       }
     ],
     resources: [
@@ -52,17 +62,17 @@ const projects = [
       {
         pos: 0,
         pic: ephenry_0,
-        alt: "P4.1-EPHenry Doors"
+        alt: "Chamber Doors"
       },
       {
         pos: 1,
         pic: ephenry_1,
-        alt: "P4.1-EPHenry HMI Home screen"
+        alt: "HMI Home screen"
       },
       {
         pos: 2,
         pic: ephenry_2,
-        alt: "P4.1-EPHenry HMI P&ID screen"
+        alt: "HMI P&ID screen"
       }
     ],
     resources: [
@@ -92,8 +102,18 @@ const projects = [
     pics: [
       {
         pos: 0,
-        pic: ephenry_0,
-        alt: "Pic of Brampton"
+        pic: brampton_0,
+        alt: "Loading Station"
+      },
+      {
+        pos: 1,
+        pic: brampton_1,
+        alt: "Chambers"
+      },
+      {
+        pos: 2,
+        pic: brampton_2,
+        alt: "Equipment"
       },
     ],
     resources: [

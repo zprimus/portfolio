@@ -7,6 +7,7 @@ import '../styles/Explore.css';
 // components
 import MapChart from '../components/MapChart.js';
 import ImgSlider from '../components/ImgSlider.js'
+import ClearButton from '../components/ClearButton.js';
 
 class Explore extends React.Component {
   constructor(props) {
@@ -32,6 +33,17 @@ class Explore extends React.Component {
     this.setState({imageSelector: pos})
   }
 
+  handleClear = () => {
+    this.setState({location:
+      {
+        id: '',
+        name: '',
+        marker: {},
+        info: {}
+      }
+    })
+  }
+
   render() {
     return (
       <div className="Explore">
@@ -41,6 +53,13 @@ class Explore extends React.Component {
               id={this.state.location.id}
             />
           </header>
+          <div className="Explore-clearbutton">
+            <ClearButton
+              url='/explore'
+              hasInfo={Object.keys(this.state.location.info).length > 0}
+              handleClick={this.handleClear}
+            />
+          </div>
           {
             Object.keys(this.state.location.info).length > 0 &&
             <body id="info">

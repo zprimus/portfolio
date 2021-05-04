@@ -1,0 +1,13 @@
+.ClearButton #straight {
+    width: 100px;
+    height: 15px;
+}
+.ClearButton #arrow {
+    width: 50px;
+    height: 15px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+

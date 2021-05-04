@@ -34,3 +34,20 @@ section {
     
     padding-bottom: 5vh;
 }
+
+.Explore-clearbutton {
+    margin: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 3%;
+  }
+  
+.Explore-clearbutton button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 0px;
+}

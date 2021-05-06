@@ -45,17 +45,13 @@
     z-index: 100;
     transform: translateY(80%);
   }
-}
 
-@media (max-width: 800px) {
   .Home-body {
-    width: 400px;
+    width: 80vw;
     color: "#C5C6C7";
     z-index: 1;
   }
-}
-  
-  
+} 
 
 .Home-background {
   margin: auto;

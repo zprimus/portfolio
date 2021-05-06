@@ -20,6 +20,24 @@ function handleClickBack() {
     
 }
 
+function handleFBShare() {
+    window.FB.ui(
+        {
+            method: 'share',
+            href: 'https://developers.facebook.com/docs/',
+        },
+        // callback
+        function(response) {
+            if (response && !response.error_message) {
+                console.log('Posting completed.');
+            } else {
+                console.log('Error while posting.');
+            }
+        }
+    );
+}
+
+
 class ProjectTemplate extends React.Component {
     constructor() {
         super();
@@ -57,7 +75,7 @@ class ProjectTemplate extends React.Component {
                         (
                             <div className="ProjectTemplate-links-nolink">
                                 <div className="ProjectTemplate-links-share">
-                                    <button id="facebook">
+                                    <button id="facebook" onClick={() => handleFBShare}>
                                         <img src={fb_icon} alt="Share to Facebook"/>
                                     </button>
                                     <button id="twitter">

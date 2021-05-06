@@ -58,3 +58,9 @@ p {
     color: "#C5C6C7";
   }
 }
+
+a:visited, a:active, a:link {
+  color: #66FCF1;
+  background-color: transparent;
+  text-decoration: none;
+}

@@ -1,6 +1,8 @@
 // dependencies
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FacebookButton, TwitterButton } from "react-social";
+import 'dotenv';
 
 // styles
 import '../styles/ProjectTemplate.css';
@@ -17,26 +19,8 @@ import BackButton from '../components/BackButton.js';
 import ImgSlider from '../components/ImgSlider.js';
 
 function handleClickBack() {
-    
-}
 
-function handleFBShare() {
-    window.FB.ui(
-        {
-            method: 'share',
-            href: 'https://developers.facebook.com/docs/',
-        },
-        // callback
-        function(response) {
-            if (response && !response.error_message) {
-                console.log('Posting completed.');
-            } else {
-                console.log('Error while posting.');
-            }
-        }
-    );
 }
-
 
 class ProjectTemplate extends React.Component {
     constructor() {
@@ -50,13 +34,15 @@ class ProjectTemplate extends React.Component {
     params = new URLSearchParams(document.location.search.substring(1));
     id = this.params.get("id");
     project = projects.filter(entry => Object.values(entry).some(val => typeof val === "string" && val.includes(this.id)));
-    project = this.project[0]
+    project = this.project[0];
 
     handleImageSelector = (pos) => {
-        this.setState({imageSelector: pos})
+        this.setState({imageSelector: pos});
     }
 
     render() {
+        let url = window.location.href;
+
         return(
             <div className="ProjectTemplate">
                 <div>
@@ -75,12 +61,12 @@ class ProjectTemplate extends React.Component {
                         (
                             <div className="ProjectTemplate-links-nolink">
                                 <div className="ProjectTemplate-links-share">
-                                    <button id="facebook" onClick={() => handleFBShare}>
+                                    <FacebookButton id="facebook" url={url} appId={process.env.REACT_APP_FB_KEY}>
                                         <img src={fb_icon} alt="Share to Facebook"/>
-                                    </button>
-                                    <button id="twitter">
+                                    </FacebookButton>
+                                    <TwitterButton id="twitter" url={url} appId={process.env.REACT_APP_TWIITER_KEY}>
                                         <img src={twitter_icon} alt="Share to Facebook"/>
-                                    </button>
+                                    </TwitterButton>
                                 </div>
                             </div>
                         ) : (

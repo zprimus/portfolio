@@ -26,7 +26,7 @@ class Projects extends React.Component {
     let id = params.get("id");
 
     if(id !== null) {
-
+      
     }
   }
 
@@ -76,7 +76,6 @@ class Projects extends React.Component {
           <div className = "Projects-selector-container">
               {this.renderSelectors()}
           </div>
-          
           <p>Select a skill that I used for the project.</p>
           <hr/>
           <div className = "Projects-tile-container">

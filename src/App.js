@@ -14,7 +14,6 @@ import Home from './routes/Home.js';
 import Projects from './routes/Projects.js';
 import ProjectTemplate from './routes/ProjectTemplate.js';
 import Explore from './routes/Explore.js';
-import Contact from './routes/Contact.js';
 
 class App extends React.Component {
   constructor() {
@@ -40,7 +39,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router
-          basename="/portfolio"
+          basename="/"
         >
           <div className="App-body">
             <Switch>
@@ -48,7 +47,6 @@ class App extends React.Component {
               <Route path="/projects" exact={true} component={Projects}/>
               <Route path="/projects?id=:id" component={ProjectTemplate}/>
               <Route path="/explore" exact={true} component={Explore}/>
-              <Route path="/contact" exact={true} component={Contact}/>
             </Switch>
           </div>
           <div className="App-menubutton">

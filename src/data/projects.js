@@ -26,7 +26,7 @@ const projects = [
       'NodeJS',
       'React',
     ],
-    link: 'https://zprimus.github.io/portfolio',
+    link: 'zprimus.com',
     pics: [
       {
         pos: 0,
@@ -40,6 +40,10 @@ const projects = [
       }
     ],
     resources: [
+      {
+        text: "Inspired by Rafael Caferati @ ",
+        link: "https://caferati.me/",
+      }
     ]
   },
   {

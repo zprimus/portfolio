@@ -26,7 +26,7 @@ const projects = [
       'NodeJS',
       'React',
     ],
-    link: 'zprimus.com',
+    link: 'https://zprimus.com',
     pics: [
       {
         pos: 0,

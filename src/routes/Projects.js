@@ -21,15 +21,6 @@ class Projects extends React.Component {
     }
   }
 
-  componentDidMount() {
-    let params = new URLSearchParams(document.location.search.substring(1));
-    let id = params.get("id");
-
-    if(id !== null) {
-      
-    }
-  }
-
   handleSelectorChange = (selector) => {
     this.setState({tagSelector: selector})
   }
@@ -55,7 +46,7 @@ class Projects extends React.Component {
     return(
       filteredProjects.map((project) => (
           <div key={project.id}>
-            <Link to={{ pathname: `/projects?id=${project.id}`}}>
+            <Link to={{ pathname: `/projects/${project.id}`}}>
               <ProjectTile
                 name={project.name}
                 pics={project.pics}

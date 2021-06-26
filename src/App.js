@@ -15,6 +15,22 @@ import Projects from './routes/Projects.js';
 import ProjectTemplate from './routes/ProjectTemplate.js';
 import Explore from './routes/Explore.js';
 
+// data 
+import projects from './data/projects';
+
+function renderProjectRoutes() {
+  return (projects.map(({id}) => 
+    <Route 
+      key={id} 
+      path={`/projects/${id}`} 
+      render={() => (
+        <ProjectTemplate
+          project={'portfolio'}
+        />
+      )}/>
+  ))
+}
+
 class App extends React.Component {
   constructor() {
     super();
@@ -27,13 +43,15 @@ class App extends React.Component {
     this.handleClickMenu = this.handleClickMenu.bind(this);
   }
 
-  toggleMenu = () => {
+  toggleMenu() {
     this.setState({showMenu: !this.state.showMenu});
   }
 
-  handleClickMenu = () => {
+  handleClickMenu() {
     this.toggleMenu();
   }
+
+  
 
   render() {
     return (
@@ -45,7 +63,7 @@ class App extends React.Component {
             <Switch>
               <Route path="/" exact={true} component={Home}/>
               <Route path="/projects" exact={true} component={Projects}/>
-              <Route path="/projects?id=:id" component={ProjectTemplate}/>
+              {renderProjectRoutes()}
               <Route path="/explore" exact={true} component={Explore}/>
             </Switch>
           </div>

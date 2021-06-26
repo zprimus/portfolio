@@ -31,17 +31,15 @@ class ProjectTemplate extends React.Component {
         }
     }
 
-    params = new URLSearchParams(document.location.search.substring(1));
-    id = this.params.get("id");
-    project = projects.filter(entry => Object.values(entry).some(val => typeof val === "string" && val.includes(this.id)));
-    project = this.project[0];
-
     handleImageSelector = (pos) => {
         this.setState({imageSelector: pos});
     }
 
     render() {
         let url = window.location.href;
+        let urlSplit = url.split('projects/');
+        let index = projects.findIndex(obj => obj.id === urlSplit[1]);
+        let project = projects[index];
 
         return(
             <div className="ProjectTemplate">
@@ -53,11 +51,11 @@ class ProjectTemplate extends React.Component {
                         />
                     </div>
                     <div className="ProjectTemplate-title">
-                        <h1>{this.project.name}</h1>
-                        <p>{this.project.overview}</p>
+                        <h1>{project.name}</h1>
+                        <p>{project.overview}</p>
                     </div>
                     {
-                        this.project.link === '' ? 
+                        project.link === '' ? 
                         (
                             <div className="ProjectTemplate-links-nolink">
                                 <div className="ProjectTemplate-links-share">
@@ -101,7 +99,7 @@ class ProjectTemplate extends React.Component {
                     <section>
                         <div>
                             <ImgSlider
-                                pics={this.project.pics}
+                                pics={project.pics}
                                 imageSelector={this.state.imageSelector}
                                 handleImageSelector={this.handleImageSelector}
                             />
@@ -110,8 +108,8 @@ class ProjectTemplate extends React.Component {
                     <section>
                         <h2>Project Description</h2>
                         <hr/>
-                        <p>{this.project.desc1}</p>
-                        <p>{this.project.desc2}</p>
+                        <p>{project.desc1}</p>
+                        <p>{project.desc2}</p>
                     </section>
                     <section>
                         <h2>Technical Sheet</h2>
@@ -119,7 +117,7 @@ class ProjectTemplate extends React.Component {
                         <hr/>
                         <ul>
                             {
-                                this.project.skills.map(skill => (
+                                project.skills.map(skill => (
                                     <li key={skill}>{skill}</li>
                                 ))
                             }
@@ -130,9 +128,9 @@ class ProjectTemplate extends React.Component {
                         <hr/>
                         <ul>
                             { 
-                                this.project.resources.length !== 0 ?
+                                project.resources.length !== 0 ?
                                 (
-                                    this.project.resources.map(resource => (
+                                    project.resources.map(resource => (
                                         <li key={resource}>{resource.text} <a href={resource.link} style={{ textDecoration: 'none' }}>{resource.link}</a></li>
                                     ))
                                 ) : (

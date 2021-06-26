@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // styles
 import './styles/App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // components
 import MenuButton from './components/MenuButton.js';

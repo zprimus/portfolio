@@ -1,38 +1,33 @@
 // dependencies
 import React from "react";
+import Carousel from "react-bootstrap/Carousel";
 
 // styles
 import '../styles/ImgSlider.css';
 
-function ImgSlider(props) {
-    let img_pics = props.pics;
-    let img_selector = props.imageSelector;
-
-    return(
-        <div>
+function renderCarouselItems(img_pics) {
+    return img_pics.map((img_pic) => (
+        <Carousel.Item
+            key={img_pic.pos}
+        >
             <div className="ImgSlider-img">
                 <img
-                    src={img_pics[img_selector].pic}
-                    alt={img_pics[img_selector].alt}
+                    className="d-block w-100"
+                    src={img_pic.pic}
+                    alt={img_pic.alt}
                 />
             </div>
-            <div className="ImgSlider-slider-bullets">
-                {
-                    props.pics.map((pic) =>
-                        (
-                            <div key={pic.pos} id="outer-circle" onClick={() => props.handleImageSelector(pic.pos)}>  
-                            {
-                                img_selector === pic.pos &&
-                                <div id="inner-circle">
-                                </div>
-                            }
-                            </div>
-                        )
-                    )
-                }
-                
-            </div>
-        </div>
+        </Carousel.Item> 
+    ))
+}
+
+function ImgSlider(props) {
+    let img_pics = props.pics;
+
+    return(
+        <Carousel>
+            {renderCarouselItems(img_pics)}
+        </Carousel>
     );
 }
 

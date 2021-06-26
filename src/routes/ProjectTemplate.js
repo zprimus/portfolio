@@ -31,10 +31,6 @@ class ProjectTemplate extends React.Component {
         }
     }
 
-    handleImageSelector = (pos) => {
-        this.setState({imageSelector: pos});
-    }
-
     render() {
         let url = window.location.href;
         let urlSplit = url.split('projects/');
@@ -100,8 +96,6 @@ class ProjectTemplate extends React.Component {
                         <div>
                             <ImgSlider
                                 pics={project.pics}
-                                imageSelector={this.state.imageSelector}
-                                handleImageSelector={this.handleImageSelector}
                             />
                         </div>
                     </section>

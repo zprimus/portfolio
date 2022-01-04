@@ -1,11 +1,4 @@
-.MapChart:hover text {
-    fill: "#66FCF1"; 
-    stroke: "#0B0C10";
-    stroke-width: "0.2px";
-}
-
-.MapChart:hover circle {
-    fill: "#66FCF1"; 
-    stroke: "#0B0C10";
-    stroke-width: "0.2px";
+.MapChart {
+    height: 100vh;
+    width: 100vw;
 }

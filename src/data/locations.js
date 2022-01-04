@@ -29,7 +29,7 @@ const locations = [
         marker: {
             nameOffsetX: 28,
             nameOffsetY: 0,
-            coordinates: [-81.9498, 28.0395]
+            coordinates: [28.0395, -81.9498]
         },
         info: {
             duration: "16 years",
@@ -65,7 +65,7 @@ const locations = [
         marker: {
             nameOffsetX: -18,
             nameOffsetY: 5,
-            coordinates: [-82.4572, 27.9506]
+            coordinates: [27.9506, -82.4572]
         },
         info: {
             duration: "3 years",
@@ -103,7 +103,7 @@ const locations = [
         marker: {
             nameOffsetX: 35,
             nameOffsetY: 7,
-            coordinates: [-74.4518, 40.4862]
+            coordinates: [40.4862, -74.4518]
         },
         info: {
             duration: "3 years",
@@ -124,7 +124,7 @@ const locations = [
         marker: {
             nameOffsetX: -28,
             nameOffsetY: 0,
-            coordinates: [-82.9988, 39.9612]
+            coordinates: [39.9612, -82.9988]
         },
         info: {
             duration: "2 years",
@@ -150,7 +150,7 @@ const locations = [
         marker: {
             nameOffsetX: 0,
             nameOffsetY: -5,
-            coordinates: [-0.1278, 51.5074]
+            coordinates: [51.5074, -0.1278]
         },
         info: {
             duration: "",
@@ -176,7 +176,7 @@ const locations = [
         marker: {
             nameOffsetX: 15,
             nameOffsetY: -5,
-            coordinates: [4.8357, 45.7640]
+            coordinates: [45.7640, 4.8357]
         },
         info: {
             duration: "",
@@ -207,7 +207,7 @@ const locations = [
         marker: {
             nameOffsetX: 0,
             nameOffsetY: -5,
-            coordinates: [-79.7622, 44.5812]
+            coordinates: [44.5812, -79.7622]
         },
         info: {
             duration: "",

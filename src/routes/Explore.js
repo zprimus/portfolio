@@ -25,7 +25,6 @@ class Explore extends React.Component {
   }
 
   handleQuery = (location) => {
-    console.log(location)
     this.setState({location: location});
   }
 
@@ -47,19 +46,22 @@ class Explore extends React.Component {
   render() {
     return (
       <div className="Explore">
-          <header className="Explore-map">
+          <div className="Explore-map">
             <MapChart
               handleQuery={this.handleQuery}
               id={this.state.location.id}
             />
-          </header>
-          <div className="Explore-clearbutton">
+          </div>
+          {/*
+            <div className="Explore-clearbutton">
             <ClearButton
               url='/explore'
               hasInfo={Object.keys(this.state.location.info).length > 0}
               handleClick={this.handleClear}
             />
           </div>
+          */}
+          
           {
             Object.keys(this.state.location.info).length > 0 &&
             <div id="info">

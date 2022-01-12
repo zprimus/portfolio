@@ -1,29 +1,32 @@
 // dependencies
-import React from "react";
-import {
-  ComposableMap,
-  Geographies,
-  Geography,
-  ZoomableGroup,
-  Marker
-} from "react-simple-maps";
-import { HashLink as Link } from 'react-router-hash-link';
+import { useState } from "react";
+//import { HashLink as Link } from 'react-router-hash-link';
+import ReactMapGL from 'react-map-gl';
 
 // data
-import locations from '../data/locations.js';
+//import locations from '../data/locations.js';
 
 // styles
 import '../styles/MapChart.css';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
-const geoUrl = "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
+function Map() {
+  const [viewport, setViewport] = useState({
+    width: 400,
+    height: 400,
+    latitude: 37.7577,
+    longitude: -122.4376,
+    zoom: 8
+  });
 
-const mapHeight = 500;
-const mapWidth = 1000;
-
-class MapChart extends React.Component {
-  render() {
-    return (
-      <div className="MapChart">
+  return (
+    <div className="MapChart">
+      <ReactMapGL
+        {...viewport}
+        onViewportChange={nextViewport => setViewport(nextViewport)}
+      />
+      {
+        /*
         <ComposableMap
           height={mapHeight}
           width={mapWidth}
@@ -87,9 +90,10 @@ class MapChart extends React.Component {
             }
           </ZoomableGroup>
         </ComposableMap>
-      </div>
-    );
-  };
+        */
+      }
+    </div>
+  );
 }
 
-export default MapChart;
+export default Map;

@@ -5,7 +5,7 @@ import React from 'react';
 import '../styles/Explore.css';
 
 // components
-import MapChart from '../components/MapChart.js';
+import Map from '../components/Map.js';
 import ImgSlider from '../components/ImgSlider.js'
 import ClearButton from '../components/ClearButton.js';
 
@@ -48,10 +48,7 @@ class Explore extends React.Component {
     return (
       <div className="Explore">
           <header className="Explore-map">
-            <MapChart
-              handleQuery={this.handleQuery}
-              id={this.state.location.id}
-            />
+            <Map/>
           </header>
           <div className="Explore-clearbutton">
             <ClearButton

@@ -1,15 +1,23 @@
-.mapboxgl-popup {
-}
-
 .mapboxgl-popup-content {
     background: #1F2833;
     border-radius: 10px;
-    border-width: 5px;
-    border-color: #66FCF1;
 }
 
-.mapboxgl-popup-tip {
-    color: red;
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+    border-bottom-color: #66FCF1;
+}
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+    border-top-color: #66FCF1;
+}
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+    border-right-color: #66FCF1;
+}
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+    border-left-color: #66FCF1;
 }
 
 .PinPopup {

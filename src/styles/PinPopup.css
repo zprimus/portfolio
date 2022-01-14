@@ -1,0 +1,17 @@
+.mapboxgl-popup {
+}
+
+.mapboxgl-popup-content {
+    background: #1F2833;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: #66FCF1;
+}
+
+.mapboxgl-popup-tip {
+    color: red;
+}
+
+.PinPopup {
+    color: #66FCF1;
+}

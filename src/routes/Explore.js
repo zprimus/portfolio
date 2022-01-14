@@ -15,7 +15,6 @@ class Explore extends React.Component {
 
     this.state = {
       location: {
-        id: '',
         name: '',
         marker: {},
         info: {}
@@ -36,7 +35,6 @@ class Explore extends React.Component {
   handleClear = () => {
     this.setState({location:
       {
-        id: '',
         name: '',
         marker: {},
         info: {}
@@ -48,7 +46,9 @@ class Explore extends React.Component {
     return (
       <div className="Explore">
           <header className="Explore-map">
-            <Map/>
+            <Map
+              handleQuery={this.handleQuery}
+            />
           </header>
           <div className="Explore-clearbutton">
             <ClearButton

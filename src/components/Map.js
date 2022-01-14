@@ -1,14 +1,19 @@
 // dependencies
 import { useState } from "react";
-//import { HashLink as Link } from 'react-router-hash-link';
 import ReactMapGL from 'react-map-gl';
 import 'dotenv';
 
+// data
+import locations from '../data/locations.js';
+
 // styles
-import '../styles/MapChart.css';
+import '../styles/Map.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-function Map() {
+// components
+import Pin from './Pin.js';
+
+function Map(props) {
   const [viewport, setViewport] = useState({
     width: '100vw',
     height: '100vh',
@@ -23,7 +28,16 @@ function Map() {
       onViewportChange={nextViewport => setViewport(nextViewport)}
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_KEY}
       mapStyle={'mapbox://styles/mapbox/satellite-streets-v11'}
-    />
+    >
+      {
+        locations.map((location) => (
+          <Pin
+            location={location}
+            handleQuery={props.handleQuery}
+          />
+        ))
+      }
+    </ReactMapGL>
   );
 }
 

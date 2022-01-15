@@ -26,8 +26,7 @@ function Map(props) {
     <ReactMapGL
       {...viewport}
       onViewportChange={nextViewport => setViewport(nextViewport)}
-      //mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_KEY}
-      mapboxApiAccessToken={"pk.eyJ1IjoienByaW11cyIsImEiOiJja3liNXJlY3AwYzVnMnVtZnl6MXB4eG1kIn0.YINTKYxfjgsDBtJ_z4mFIg"}
+      mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_KEY}
       mapStyle={'mapbox://styles/mapbox/satellite-streets-v11'}
     >
       {

@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 // styles
 import '../styles/BackButton.css';
 
-function BackButton(props) {
+const BackButton = (props) => {
     return (
-        <Link to={`${props.url}`} style={{ textDecoration: 'none' }} onClick={() => props.handleClick()}>
+        <Link to={`${props.url}`} style={{ textDecoration: 'none' }}>
             <button className="BackButton">
                 <svg viewBox="0 0 100 80" width="40" height="40">
                     <g transform="translate(0 35) rotate(-45)">

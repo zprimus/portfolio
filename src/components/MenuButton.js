@@ -4,7 +4,7 @@ import React from 'react';
 // styles
 import '../styles/MenuButton.css';
 
-function MenuButton(props) {
+const MenuButton = (props) => {
     return (
         props.showMenu ? (
             <button className="MenuButton" onMouseDown={() => props.handleClickMenu()}>

@@ -18,7 +18,6 @@
 
 .Home-body {
   width: 800px;
-  color: "#C5C6C7";
   z-index: 1;
   text-shadow: -1px 1px 2px #000,
     1px 1px 2px #000,
@@ -33,7 +32,6 @@
 
 .Home-body p {
   font-size: 30px;
-  
 }
 
 @media (max-width: 1000px) {
@@ -48,7 +46,6 @@
 
   .Home-body {
     width: 80vw;
-    color: "#C5C6C7";
     z-index: 1;
   }
 } 

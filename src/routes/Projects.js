@@ -1,52 +1,65 @@
 // dependencies
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 // styles
 import '../styles/Projects.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // components
 import ProjectTile from '../components/ProjectTile.js';
 
 // data
 import projects from '../data/projects.js';
-import tags from '../data/tags.js';
+import skills from '../data/skills.js';
 
-class Projects extends React.Component {
-  constructor(props) {
-    super(props);
+const Projects = () => {
+  const [skillSelector, setSkillSelector] = useState("All");
 
-    this.state = {
-      tagSelector: "All",
-    }
+  const handleSelectorChange = (selector) => {
+    setSkillSelector(selector);
   }
 
-  handleSelectorChange = (selector) => {
-    this.setState({tagSelector: selector})
-  }
-
-  renderSelectors() {
+  const renderSelectors = () => {
     return(
-      tags.map((selector, index) => (
-        selector === this.state.tagSelector ? (
-          <button key={index} className="Projects-selector-button" id="selected" onMouseDown={() => this.handleSelectorChange(selector)}>{selector}</button>
+      skills.map((selector, index) => (
+        selector === skillSelector ? (
+          <Button 
+            key={index} 
+            className="Projects-selector-button" 
+            id="selected" 
+            onMouseDown={() => handleSelectorChange(selector)}
+          >
+              {selector}
+          </Button>
         ) : (
-          <button key={index} className="Projects-selector-button" id="not_selected" onMouseDown={() => this.handleSelectorChange(selector)}>{selector}</button>
+          <Button
+            key={index} 
+            className="Projects-selector-button" 
+            id="not_selected" 
+            onMouseDown={() => handleSelectorChange(selector)}
+          >
+            {selector}
+          </Button>
         )
       ))
     )
   }
 
-  renderProjectTiles() {
+  const renderProjectTiles = () => {
     let filteredProjects;
-    this.state.tagSelector==='All' ?
-    filteredProjects = projects :
-    filteredProjects = projects.filter(project => project.skills.find(tag => tag===this.state.tagSelector));
+    skillSelector==='All' ?
+      (
+        filteredProjects = projects
+      ) : (
+        filteredProjects = projects.filter(project => project.skills.find(skill => skill===skillSelector))
+      )
     
     return(
-      filteredProjects.map((project) => (
-          <div key={project.id}>
-            <Link to={{ pathname: `/projects/${project.id}`}}>
+      filteredProjects.map((project, index) => (
+          <div key={index} className="Projects-tile">
+            <Link to={{ pathname: `/projects/${project.id}`}} style={{textDecoration: 'none'}}>
               <ProjectTile
                 name={project.name}
                 pics={project.pics}
@@ -58,23 +71,32 @@ class Projects extends React.Component {
     )
   }
 
-  render() {
-    return (
-      <div className = "Projects">
-          <div className = "Projects-header">
-            <h2>My finished projects are here. Check them out!</h2>
-          </div>
-          <div className = "Projects-selector-container">
-              {this.renderSelectors()}
-          </div>
-          <p>Select a skill that I used for the project.</p>
-          <hr/>
-          <div className = "Projects-tile-container">
-              {this.renderProjectTiles()}
-          </div>
+  return (
+    <div className="Projects">
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <div className="Projects-header">
+        <h2>My finished projects are here. Check them out!</h2>
       </div>
-    );
-  }
+      <br/>
+      <div className="Projects-selector-container">
+        {renderSelectors()}
+      </div>
+      <br/>
+      <p>Select a skill that I used for the project.</p>
+      <hr/>
+      <br/>
+      <div className="Projects-tile-container">
+        {renderProjectTiles()}
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+    </div>
+  );
 }
 
 export default Projects;

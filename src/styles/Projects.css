@@ -1,8 +1,7 @@
 .Projects {
     width: 80vw;
-    min-height: 90vh;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
+    min-height: 100vh;
+    max-width: 80vw;
 }
 
 .Projects-header {
@@ -36,7 +35,7 @@
 
 #not_selected {
     background-color: #0B0C10; 
-    color: #45A29E;
+    color: #66FCF1;
     border-color: #45A29E;
 }
 
@@ -44,6 +43,22 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+    column-gap: calc((80vw - (768px * 2)) / 2);
+    align-items: center;
     flex-wrap: wrap;
+    
+}
+
+.Projects-tile {
+    width: 768px;
+    height: 512px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #66FCF1;
+    padding-top: 5px;
+}
+
+.Projects-tile:hover {
+    opacity: 0.5;
 }

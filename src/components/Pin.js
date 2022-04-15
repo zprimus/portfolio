@@ -15,16 +15,18 @@ const ICON = `M20.2,15.7L20.2,15.7c1.1-1.6,1.8-3.6,1.8-5.7c0-5.6-4.5-10-10-10S2,
 
 const SIZE = 20;
 
-function Pin(props) {
+const Pin = (props) => {
   const [showPopup, setPopupState] = useState(false);
+
+  const { marker } = props.location;
 
   return (
     <div>
-      <Link to="#info" style={{ textDecoration: 'none' }} onClick={() => props.handleQuery(props.location)}>
+      <Link to={{ pathname: `/explore/${props.location.id}`}} style={{textDecoration: 'none'}}>
         <Marker 
-          key={props.location.name} 
-          longitude={props.location.marker.coordinates[0]}
-          latitude={props.location.marker.coordinates[1]}
+          key={marker.id}
+          longitude={marker.coordinates[0]}
+          latitude={marker.coordinates[1]}
         >
           <svg
             height={SIZE}
@@ -45,7 +47,7 @@ function Pin(props) {
       {
         showPopup &&
         <PinPopup
-          location={props.location}
+          marker={marker}
         />
       }
     </div>

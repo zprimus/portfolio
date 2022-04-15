@@ -11,7 +11,7 @@ import ig_icon from "../assets/icons/ig_icon.svg";
 import github_icon from "../assets/icons/github_icon.svg";
 import linkedin_icon from "../assets/icons/linkedin_icon.svg";
 
-function SocialBar() {
+const SocialBar = () => {
     return (
         <div className="SocialBar">
             <div className="SocialBar-item" id="facebook">

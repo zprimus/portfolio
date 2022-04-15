@@ -3,22 +3,24 @@ import React from 'react';
 
 // styles
 import '../styles/Home.css';
+import styles from '../styles/styles';
 
 // components
 import SocialBar from '../components/SocialBar.js';
 import HomeBackground from '../components/HomeBackground.js';
 
 
-function Home() {
+const Home = () => {
   return (
     <div className="Home">
       <div className="Home-body">
         <h1>Hi, my name is Zachary Primus.</h1>
-        <p>
-          I'm an Electrical Engineer with a passion for Hardware Design and Software Development.
+        <br/>
+        <p style={{color: styles.color.color3}}>
+          I'm an Engineer with a passion for Software Development. My current focus is creating high-impact web and mobile apps.
         </p>
-        <p>
-          Check out my experiences!
+        <p style={{color: styles.color.color3}}>
+          Check out my previous experiences!
         </p>
       </div>
       <div className="Home-social">

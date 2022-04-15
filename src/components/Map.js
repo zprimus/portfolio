@@ -13,7 +13,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // components
 import Pin from './Pin.js';
 
-function Map(props) {
+const Map = () => {
   const [viewport, setViewport] = useState({
     width: '100vw',
     height: '100vh',
@@ -33,7 +33,6 @@ function Map(props) {
         locations.map((location) => (
           <Pin
             location={location}
-            handleQuery={props.handleQuery}
           />
         ))
       }

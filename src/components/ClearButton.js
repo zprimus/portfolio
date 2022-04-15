@@ -5,7 +5,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 // styles
 import '../styles/ClearButton.css';
 
-function ClearButton(props) {
+const ClearButton = (props) => {
     return (
         props.hasInfo &&
         <Link to={`${props.url}`} style={{ textDecoration: 'none' }} onClick={() => props.handleClick()}>

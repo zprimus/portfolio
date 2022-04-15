@@ -5,7 +5,7 @@ import Carousel from "react-bootstrap/Carousel";
 // styles
 import '../styles/ImgSlider.css';
 
-function renderCarouselItems(img_pics) {
+const renderCarouselItems = (img_pics) => {
     return img_pics.map((img_pic) => (
         <Carousel.Item
             key={img_pic.pos}
@@ -21,7 +21,7 @@ function renderCarouselItems(img_pics) {
     ))
 }
 
-function ImgSlider(props) {
+const ImgSlider = (props) => {
     let img_pics = props.pics;
 
     return(

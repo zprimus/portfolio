@@ -2,10 +2,10 @@
 import React from 'react';
 
 // styles
-import '../styles/HomeBackground.css';
+//import '../styles/HomeBackground.css';
 
 // assets
-import {ReactComponent as Ink4} from '../assets/ink/ink4.svg';
+import {ReactComponent as Ink4} from '../lib/assets/ink/ink4.svg';
 
 const HomeBackground = () => {
     return(

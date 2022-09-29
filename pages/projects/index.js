@@ -1,18 +1,13 @@
 // dependencies
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
-
-// styles
-import '../styles/Projects.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Link from 'next/link';
 
 // components
-import ProjectTile from '../components/ProjectTile.js';
+import ProjectTile from '../../components/ProjectTile.js';
 
 // data
-import projects from '../data/projects.js';
-import skills from '../data/skills.js';
+import projects from '../../lib/data/projects.js';
+import skills from '../../lib/data/skills.js';
 
 const Projects = () => {
   const [skillSelector, setSkillSelector] = useState("All");
@@ -25,23 +20,23 @@ const Projects = () => {
     return(
       skills.map((selector, index) => (
         selector === skillSelector ? (
-          <Button 
+          <button 
             key={index} 
             className="Projects-selector-button" 
             id="selected" 
             onMouseDown={() => handleSelectorChange(selector)}
           >
               {selector}
-          </Button>
+          </button>
         ) : (
-          <Button
+          <button
             key={index} 
             className="Projects-selector-button" 
             id="not_selected" 
             onMouseDown={() => handleSelectorChange(selector)}
           >
             {selector}
-          </Button>
+          </button>
         )
       ))
     )
@@ -59,7 +54,7 @@ const Projects = () => {
     return(
       filteredProjects.map((project, index) => (
           <div key={index} className="Projects-tile">
-            <Link to={{ pathname: `/projects/${project.id}`}} style={{textDecoration: 'none'}}>
+            <Link href={`/projects/${project.id}`} style={{textDecoration: 'none'}}>
               <ProjectTile
                 name={project.name}
                 pics={project.pics}

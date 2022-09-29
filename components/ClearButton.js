@@ -1,15 +1,16 @@
 // dependencies
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 
 // styles
-import '../styles/BackButton.css';
+//import '../styles/ClearButton.css';
 
-const BackButton = (props) => {
+const ClearButton = (props) => {
     return (
-        <Link to={`${props.url}`} style={{ textDecoration: 'none' }}>
-            <button className="BackButton">
-                <svg viewBox="0 0 100 80" width="40" height="40">
+        props.hasInfo &&
+        <Link to={`${props.url}`} style={{ textDecoration: 'none' }} onClick={() => props.handleClick()}>
+            <button className="ClearButton">
+                <svg viewBox="0 0 100 80" width="40" height="40" transform="rotate(90)">
                     <g transform="translate(0 35) rotate(-45)">
                         <rect id="arrow" rx="15"  stroke="#66FCF1" strokeWidth="5"></rect>
                     </g>
@@ -25,4 +26,4 @@ const BackButton = (props) => {
     );
   }
 
-export default BackButton;
+export default ClearButton;

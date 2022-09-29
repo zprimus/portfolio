@@ -4,10 +4,9 @@ import ReactMapGL from 'react-map-gl';
 import 'dotenv';
 
 // data
-import locations from '../data/locations.js';
+import locations from '../lib/data/locations.js';
 
 // styles
-import '../styles/Map.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 // components

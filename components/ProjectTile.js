@@ -1,10 +1,7 @@
 // dependencies
 import React from 'react';
 
-// styles
-import '../styles/ProjectTile.css';
-
-function ProjectTile(props) {
+const ProjectTile = (props) => {
     return(
         <>
             <div className="ProjectTile-header">

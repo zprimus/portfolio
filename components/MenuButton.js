@@ -1,9 +1,6 @@
 // dependencies
 import React from 'react';
 
-// styles
-import '../styles/MenuButton.css';
-
 const MenuButton = (props) => {
     return (
         props.showMenu ? (

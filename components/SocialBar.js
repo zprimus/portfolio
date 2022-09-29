@@ -2,14 +2,14 @@
 import React from 'react';
 
 // styles
-import '../styles/SocialBar.css';
+//import '../styles/SocialBar.css';
 
 // assets
-import fb_icon from "../assets/icons/fb_icon.svg";
-import twitter_icon from "../assets/icons/twitter_icon.svg";
-import ig_icon from "../assets/icons/ig_icon.svg";
-import github_icon from "../assets/icons/github_icon.svg";
-import linkedin_icon from "../assets/icons/linkedin_icon.svg";
+import fb_icon from "../lib/assets/icons/fb_icon.svg";
+import twitter_icon from "../lib/assets/icons/twitter_icon.svg";
+import ig_icon from "../lib/assets/icons/ig_icon.svg";
+import github_icon from "../lib/assets/icons/github_icon.svg";
+import linkedin_icon from "../lib/assets/icons/linkedin_icon.svg";
 
 const SocialBar = () => {
     return (

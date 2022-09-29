@@ -2,7 +2,7 @@
 import { Popup } from 'react-map-gl';
 
 // styles
-import '../styles/PinPopup.css';
+//import '../styles/PinPopup.css';
 
 const PinPopup = (props) => {
     const { marker } = props;

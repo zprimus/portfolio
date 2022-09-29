@@ -3,7 +3,7 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 
 // styles
-import '../styles/ImgSlider.css';
+//import '../styles/ImgSlider.css';
 
 const renderCarouselItems = (img_pics) => {
     return img_pics.map((img_pic) => (

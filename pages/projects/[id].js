@@ -1,0 +1,139 @@
+// dependencies
+import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { FacebookButton, TwitterButton } from "react-social";
+
+// data
+import projects from '../../lib/data/projects.js';
+
+// components
+import BackButton from '../../components/BackButton.js';
+//import ImgSlider from '../../components/ImgSlider.js';
+
+const ProjectTemplate = ({host}) => {
+    // get project id from url
+    const router = useRouter();
+    const { id } = router.query;
+
+    // find project data using id
+    let index = projects.findIndex(obj => obj.id === id);
+    let project = projects[index];
+
+    // get current url
+    let url = host + router.asPath;
+
+    return(
+        <div className="ProjectTemplate">
+            <div>
+                <div className="ProjectTemplate-backbutton">
+                    <BackButton
+                        url='/projects'
+                    />
+                </div>
+                <div className="ProjectTemplate-title">
+                    <h1>{project.name}</h1>
+                    <p>{project.overview}</p>
+                </div>
+                {
+                    project.link === '' ? 
+                    (
+                        <div className="ProjectTemplate-links-nolink">
+                            <div className="ProjectTemplate-links-share">
+                                <FacebookButton id="facebook" url={url} appId={process.env.FB_KEY}>
+                                    <img src={'/icons/fb_icon.svg'} alt="Share to Facebook"/>
+                                </FacebookButton>
+                                <TwitterButton id="twitter" url={url} appId={process.env.TWIITER_KEY}>
+                                    <img src={'/icons/twitter_icon.svg'} alt="Share to Facebook"/>
+                                </TwitterButton>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="ProjectTemplate-links">
+                                <div className="ProjectTemplate-links-link">
+                                    <Link href="/" style={{ textDecoration: 'none' }}>
+                                        <button
+                                            style={{
+                                                padding: "5px",
+                                                borderRadius: "5px",
+                                                fontWeight: 'bold'
+                                            }}
+                                        >
+                                            Go to Project!
+                                        </button>
+                                    </Link>
+                                </div>
+                            
+                            <div className="ProjectTemplate-links-share">
+                                <button id="facebook">
+                                    <img src={'/icons/fb_icon.svg'} alt="Share to Facebook"/>
+                                </button>
+                                <button id="twitter">
+                                    <img src={'/icons/twitter_icon.svg'} alt="Share to Facebook"/>
+                                </button>
+                            </div>
+                        </div>
+                    )
+                }
+            </div>
+            <div>
+                <section>
+                    <div>
+                        {/*<ImgSlider
+                            pics={project.pics}
+            />*/}
+                    </div>
+                </section>
+                <section>
+                    <br/>
+                    <br/>
+                    <h2>Project Description</h2>
+                    <hr/>
+                    {
+                        project.desc.map((desc, index) => (
+                            <p key={index} style={{}}>{desc}</p>
+                        ))
+                    }
+                </section>
+                <section>
+                    <h2>Technical Sheet</h2>
+                    <p>Technologies and skills that I used for the project.</p>
+                    <hr/>
+                    <ul>
+                        {
+                            project.skills.map(skill => (
+                                <li key={skill} style={{}}>{skill}</li>
+                            ))
+                        }
+                    </ul>
+                </section>
+                <section>
+                    <h2>Resources</h2>
+                    <hr/>
+                    <ul>
+                        { 
+                            project.resources.length !== 0 ?
+                            (
+                                project.resources.map(resource => (
+                                    <li key={resource} style={{}}>{resource.text} <a href={resource.link} style={{ textDecoration: 'none' }}>{resource.link}</a></li>
+                                ))
+                            ) : (
+                                <li>N/A</li>
+                            )
+                        }
+                    </ul>
+                </section>
+            </div>
+        </div>
+    );
+}
+
+export const getServerSideProps = async (context) => (
+    { 
+        props: { 
+            host: context.req.headers.host || null 
+        } 
+    }
+);
+
+export default ProjectTemplate;

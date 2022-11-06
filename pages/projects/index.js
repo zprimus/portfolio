@@ -53,34 +53,30 @@ const Projects = () => {
     
     return(
       filteredProjects.map((project, index) => (
-          <div key={index} className="Projects-tile">
             <Link href={`/projects/${project.id}`} style={{textDecoration: 'none'}}>
-              <ProjectTile
-                name={project.name}
-                pics={project.pics}
-                pic_desc={project.pic_desc}
-              />
+              <div key={index} className="Projects-tile">
+                  <ProjectTile
+                    name={project.name}
+                    pics={project.pics}
+                    pic_desc={project.pic_desc}
+                  />
+              </div>
             </Link>
-          </div>
       ))
     )
   }
 
   return (
     <div className="Projects">
-      <br/>
-      <br/>
-      <br/>
-      <br/>
       <div className="Projects-header">
         <h2>My finished projects are here. Check them out!</h2>
       </div>
+      <p>Select a skill that I used for the project.</p>
       <br/>
       <div className="Projects-selector-container">
         {renderSelectors()}
       </div>
       <br/>
-      <p>Select a skill that I used for the project.</p>
       <hr/>
       <br/>
       <div className="Projects-tile-container">

@@ -43,7 +43,7 @@ const MyApp = ({ Component, pageProps }) => {
   }
 
   return (
-    <div>
+    <div className='App'>
       <Component {...pageProps} />
       <div className="App-menubutton">
         <MenuButton

@@ -1,7 +1,7 @@
 .Projects {
     width: 80vw;
     min-height: 100vh;
-    max-width: 80vw;
+    max-width: 1000px;
 }
 
 .Projects-header {
@@ -14,14 +14,13 @@
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: wrap;
+    margin: -8px;
 }
 
 
 .Projects-selector-button {
-    padding: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding: 5px;
+    margin: 8px;
     border-radius: 5px;
     font-size: medium;
     font-weight: bold;
@@ -30,35 +29,58 @@
 #selected {
     background-color: #66FCF1; 
     color: #0B0C10;
-    border-color: #45A29E;
 }
 
 #not_selected {
     background-color: #0B0C10; 
     color: #66FCF1;
-    border-color: #45A29E;
+    border-color: #66FCF1;
+}
+
+#not_selected:hover {
+    border-width: 5px;
+    margin: 5px
 }
 
 .Projects-tile-container {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    column-gap: calc((80vw - (768px * 2)) / 2);
-    align-items: center;
-    flex-wrap: wrap;
-    
+    display: grid;
+    gap: 25px 25px;
+    grid-template-columns: 1fr;
+    align-items: space-evenly;
+    justify-items: center;
 }
 
 .Projects-tile {
-    width: 768px;
-    height: 512px;
-    border-style: solid;
-    border-width: 5px;
-    border-color: #66FCF1;
-    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 220px;
+    box-shadow: 0 1px 2px rgba(197, 198, 199, 0.1);
 }
 
 .Projects-tile:hover {
-    opacity: 0.5;
+    cursor: pointer;
+}
+
+
+@media (min-width: 680px) {
+    .Projects-tile-container {
+        grid-template-columns: 1fr;
+    }
+
+    .Projects-tile {
+        width: 450px;
+        height: 300px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .Projects-tile-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .Projects {
+        width: 1000px;
+    }
 }

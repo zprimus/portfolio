@@ -1,7 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
+require("dotenv").config();
 
-module.exports = nextConfig
+module.exports = {
+  env: {
+    MAPBOX_KEY: process.env.MAPBOX_KEY,
+    FB_KEY: process.env.FB_KEY,
+    TWITTER_KEY: process.env.TWITTER_KEY,
+  }
+}

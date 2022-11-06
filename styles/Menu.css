@@ -1,5 +1,4 @@
 #Menu {
-    background-color: #696969;
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -44,6 +43,10 @@
     background-color: #0B0C10;
 }
 
+.Menu-link:hover {
+    cursor: pointer;
+}
+
 .Menu-routes {
     align-items: center;
     display: flex;
@@ -56,7 +59,5 @@
     position: absolute;
     right: 0;
     top: 0;
-    padding:3%;
+    padding: 3%;
 }
-
-

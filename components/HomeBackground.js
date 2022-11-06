@@ -1,18 +1,13 @@
 // dependencies
 import React from 'react';
-
-// styles
-//import '../styles/HomeBackground.css';
-
-// assets
-import {ReactComponent as Ink4} from '../lib/assets/ink/ink4.svg';
+import Image from 'next/image';
 
 const HomeBackground = () => {
     return(
         <div className="HomeBackground">
-            <Ink4 className="ink2" id="ink4-1"/>
-            <Ink4 className="ink3" id="ink4-2"/>
-            <Ink4 className="ink4" id="ink4-3"/>
+            <Image src={"/ink/ink4.svg"} layout='fill' className="ink2" id="ink4-1"/>
+            <Image src={"/ink/ink4.svg"} layout='fill' className="ink3" id="ink4-2"/>
+            <Image src={"/ink/ink4.svg"} layout='fill' className="ink4" id="ink4-3"/>
         </div>
     );
   }

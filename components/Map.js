@@ -1,7 +1,7 @@
 // dependencies
 import { useState } from "react";
 import ReactMapGL from 'react-map-gl';
-import 'dotenv';
+//import 'dotenv';
 
 // data
 import locations from '../lib/data/locations.js';
@@ -25,7 +25,7 @@ const Map = () => {
     <ReactMapGL
       {...viewport}
       onViewportChange={nextViewport => setViewport(nextViewport)}
-      mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_KEY}
+      mapboxApiAccessToken={process.env.MAPBOX_KEY}
       mapStyle={'mapbox://styles/mapbox/satellite-streets-v11'}
     >
       {

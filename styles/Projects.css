@@ -2,6 +2,8 @@
     width: 80vw;
     min-height: 100vh;
     max-width: 1000px;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
 }
 
 .Projects-header {

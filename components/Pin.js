@@ -1,7 +1,7 @@
 // dependencies
 import { useState } from "react";
-import Link from 'next/link';
 import { Marker } from 'react-map-gl';
+import Link from 'next/link';
 
 // components
 import PinPopup from "./PinPopup.js";
@@ -15,42 +15,41 @@ const ICON = `M20.2,15.7L20.2,15.7c1.1-1.6,1.8-3.6,1.8-5.7c0-5.6-4.5-10-10-10S2,
 
 const SIZE = 20;
 
-const Pin = (props) => {
+const Pin = ({location, location: { marker }}) => {
   const [showPopup, setPopupState] = useState(false);
 
-  const { marker } = props.location;
-
   return (
-    <div key={props.location.id}>
-      <Link href={`/explore/${props.location.id}`} style={{textDecoration: 'none'}}>
-        <Marker 
-          key={marker.id}
-          longitude={marker.coordinates[0]}
-          latitude={marker.coordinates[1]}
+    <>
+      <Marker 
+        key={marker.id}
+        longitude={marker.coordinates[0]}
+        latitude={marker.coordinates[1]}
+        onClick={() => setPopupState(!showPopup)}
+      >
+        <svg
+          height={SIZE}
+          viewBox="0 0 24 24"
+          style={{
+            cursor: 'pointer',
+            fill: styles.color.color4,
+            stroke: styles.color.color1,
+            transform: `translate(${-SIZE / 2}px,${-SIZE}px)`
+          }}
         >
-          <svg
-            height={SIZE}
-            viewBox="0 0 24 24"
-            style={{
-              cursor: 'pointer',
-              fill: styles.color.color4,
-              stroke: '#0B0C10',
-              transform: `translate(${-SIZE / 2}px,${-SIZE}px)`
-            }}
-            onMouseEnter={() => setPopupState(true)}
-            onMouseLeave={() => setPopupState(false)}
-          >
-            <path d={ICON}/>
-          </svg>
-        </Marker>
-      </Link>
+          <path d={ICON}/>
+        </svg>
+      </Marker>
       {
         showPopup &&
-        <PinPopup
-          marker={marker}
-        />
+        <Link href={`/explore/${location.id}`} style={{textDecoration: 'none'}}>
+          <div style={{cursor: 'pointer'}}>
+            <PinPopup
+              marker={marker}
+            />
+          </div>
+        </Link>
       }
-    </div>
+    </>
   );
 }
 

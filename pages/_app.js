@@ -30,6 +30,7 @@ import '../styles/Projects.css';
 import '../styles/ProjectTemplate.css';
 import '../styles/ProjectTile.css';
 import '../styles/SocialBar.css';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const MyApp = ({ Component, pageProps }) => {
   const [showMenu, setShowMenu] = useState(false);

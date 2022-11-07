@@ -6,8 +6,8 @@ import Link from 'next/link';
 import ProjectTile from '../../components/ProjectTile.js';
 
 // data
-import projects from '../../lib/data/projects.js';
-import skills from '../../lib/data/skills.js';
+import projects from '../../lib/projects.js';
+import skills from '../../lib/skills.js';
 
 const Projects = () => {
   const [skillSelector, setSkillSelector] = useState("All");
@@ -53,8 +53,8 @@ const Projects = () => {
     
     return(
       filteredProjects.map((project, index) => (
-            <Link href={`/projects/${project.id}`} style={{textDecoration: 'none'}}>
-              <div key={index} className="Projects-tile">
+            <Link href={`/projects/${project.id}`}>
+              <div className="Projects-tile" key={index}>
                   <ProjectTile
                     name={project.name}
                     pics={project.pics}

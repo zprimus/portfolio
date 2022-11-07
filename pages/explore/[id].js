@@ -1,21 +1,21 @@
 // dependencies
 import React from 'react';
-import 'dotenv';
-
-// styles
-import '../styles/ExploreTemplate.css';
+import { useRouter } from 'next/router';
 
 // data
-import locations from '../data/locations';
+import locations from '../../lib/locations';
 
 // components
-import BackButton from '../components/BackButton.js';
-import ImgSlider from '../components/ImgSlider.js';
+import BackButton from '../../components/BackButton.js';
+import ImgCarousel from '../../components/ImgCarousel.js';
 
 const ExploreTemplate = () => {
-    let url = window.location.href;
-    let urlSplit = url.split('explore/');
-    let index = locations.findIndex(obj => obj.id === urlSplit[1]);
+    // get project id from url
+    const router = useRouter();
+    const { id } = router.query;
+
+    // find location data using id
+    let index = locations.findIndex(obj => obj.id === id);
     let location = locations[index];
 
     return(
@@ -39,7 +39,7 @@ const ExploreTemplate = () => {
                 {
                     location.info.imgs.length > 0 &&
                     <div className={"ExploreTemplate-slider"}>
-                        <ImgSlider
+                        <ImgCarousel
                             pics={location.info.imgs}
                         />
                     </div>

@@ -30,6 +30,10 @@ h1, h2, h3, h4 {
   color: #66FCF1;
 }
 
+h5 {
+  color: #0B0C10
+}
+
 li {
   font-size: larger;
 }

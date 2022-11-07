@@ -5,11 +5,11 @@ import { useRouter } from 'next/router';
 import { FacebookButton, TwitterButton } from "react-social";
 
 // data
-import projects from '../../lib/data/projects.js';
+import projects from '../../lib/projects.js';
 
 // components
 import BackButton from '../../components/BackButton.js';
-//import ImgSlider from '../../components/ImgSlider.js';
+import ImgCarousel from '../../components/ImgCarousel.js';
 
 const ProjectTemplate = ({host}) => {
     // get project id from url
@@ -79,14 +79,12 @@ const ProjectTemplate = ({host}) => {
             <div>
                 <section>
                     <div>
-                        {/*<ImgSlider
+                        <ImgCarousel
                             pics={project.pics}
-            />*/}
+                        />
                     </div>
                 </section>
                 <section>
-                    <br/>
-                    <br/>
                     <h2>Project Description</h2>
                     <hr/>
                     {
@@ -115,7 +113,7 @@ const ProjectTemplate = ({host}) => {
                             project.resources.length !== 0 ?
                             (
                                 project.resources.map(resource => (
-                                    <li key={resource} style={{}}>{resource.text} <a href={resource.link} style={{ textDecoration: 'none' }}>{resource.link}</a></li>
+                                    <li key={resource} style={{}}>{resource.text} <a href={resource.link} target="_blank" style={{ textDecoration: 'none' }}>{resource.link}</a></li>
                                 ))
                             ) : (
                                 <li>N/A</li>

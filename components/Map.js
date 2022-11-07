@@ -1,12 +1,11 @@
 // dependencies
 import { useState } from "react";
 import ReactMapGL from 'react-map-gl';
-//import 'dotenv';
 
 // data
-import locations from '../lib/data/locations.js';
+import locations from '../lib/locations.js';
 
-// styles
+// style
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 // components
@@ -30,9 +29,11 @@ const Map = () => {
     >
       {
         locations.map((location) => (
-          <Pin
-            location={location}
-          />
+          <div key={location.id}>
+            <Pin
+              location={location}
+            />
+          </div>
         ))
       }
     </ReactMapGL>

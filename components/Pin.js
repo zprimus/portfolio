@@ -15,8 +15,17 @@ const ICON = `M20.2,15.7L20.2,15.7c1.1-1.6,1.8-3.6,1.8-5.7c0-5.6-4.5-10-10-10S2,
 
 const SIZE = 20;
 
-const Pin = ({location, location: { marker }}) => {
+const Pin = ({location, location: { marker }, handleViewportChange}) => {
   const [showPopup, setPopupState] = useState(false);
+
+  const handlePinClick = () => {
+    handleViewportChange({
+      latitude: 17,
+      longitude: 11,
+      zoom: 2,
+    });
+    //setPopupState(!showPopup);
+  }
 
   return (
     <>
@@ -24,7 +33,7 @@ const Pin = ({location, location: { marker }}) => {
         key={marker.id}
         longitude={marker.coordinates[0]}
         latitude={marker.coordinates[1]}
-        onClick={() => setPopupState(!showPopup)}
+        onClick={() => handlePinClick()}
       >
         <svg
           height={SIZE}
@@ -46,6 +55,7 @@ const Pin = ({location, location: { marker }}) => {
             <PinPopup
               marker={marker}
             />
+            <p>hi</p>
           </div>
         </Link>
       }

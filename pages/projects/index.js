@@ -53,15 +53,15 @@ const Projects = () => {
     
     return(
       filteredProjects.map((project, index) => (
-            <Link href={`/projects/${project.id}`}>
-              <div className="Projects-tile" key={index}>
-                  <ProjectTile
-                    name={project.name}
-                    pics={project.pics}
-                    pic_desc={project.pic_desc}
-                  />
-              </div>
-            </Link>
+        <Link href={`/projects/${project.id}`} key={index}>
+          <div className="Projects-tile">
+            <ProjectTile
+              name={project.name}
+              pics={project.pics}
+              pic_desc={project.pic_desc}
+            />
+          </div>
+        </Link>
       ))
     )
   }

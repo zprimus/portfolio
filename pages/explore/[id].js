@@ -26,18 +26,18 @@ const ExploreTemplate = () => {
                 />
             </div> 
             <div className="ExploreTemplate-info">
-                <h1>{location.info.name}</h1>
+                <h1>{location.info?.name}</h1>
                 <hr/>
                 <h3>General Info</h3>
                 <ul>
                     {
-                        location.info.general.map((info, index) => (
+                        location.info?.general.map((info, index) => (
                             <li key={index}>{info}</li>
                         ))
                     }
                 </ul>
                 {
-                    location.info.imgs.length > 0 &&
+                    location.info?.imgs.length > 0 &&
                     <div className={"ExploreTemplate-slider"}>
                         <ImgCarousel
                             pics={location.info.imgs}
@@ -47,17 +47,17 @@ const ExploreTemplate = () => {
                 <br/>
                 <h3>Details</h3>
                 {
-                    location.info.desc.map((desc, index) => (
+                    location.info?.desc.map((desc, index) => (
                         <p key={index}>{desc}</p>
                     ))
                 }
                 {
-                    location.info.resources.length > 0 &&
+                    location.info?.resources.length > 0 &&
                     <>
                         <h3>Resources</h3>
                         <ul>
                             {
-                                location.info.resources.map((resource, index) => (
+                                location.info?.resources.map((resource, index) => (
                                     <li key={index}>
                                         <>
                                             {resource.text}:&nbsp;

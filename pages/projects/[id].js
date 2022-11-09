@@ -113,7 +113,7 @@ const ProjectTemplate = ({host}) => {
                             project.resources.length !== 0 ?
                             (
                                 project.resources.map(resource => (
-                                    <li key={resource} style={{}}>{resource.text} <a href={resource.link} target="_blank" style={{ textDecoration: 'none' }}>{resource.link}</a></li>
+                                    <li key={resource} style={{}}>{resource.text} <a href={resource.link} target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>{resource.link}</a></li>
                                 ))
                             ) : (
                                 <li>N/A</li>

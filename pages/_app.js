@@ -48,7 +48,6 @@ const MyApp = ({ Component, pageProps }) => {
     <div className='App'>
       <Head>
         <title>Zachary Primus</title>
-        <meta charset="UTF-8"/>
         <meta name="keywords" content="HTML, CSS, JavaScript, NextJS, React, Software, Developer, Web, Zachary, Primus, Zac, zprimus, zacprimus"/>
         <meta name="author" content="Zachary Primus"/>
         <meta name="description" content="I'm an Engineer with a passion for Software Development. This is my portfolio to keep track of my journey throughout my career and in everyday life."/>

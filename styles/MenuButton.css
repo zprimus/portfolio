@@ -1,8 +1,76 @@
+.MenuButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .MenuButton rect {
     width: 100px;
     height: 15px;
 }
 
-button:hover {
+.MenuButton:hover {
     cursor: pointer;
+}
+
+
+
+#MenuButton-line1.closeMenu {
+    transform: translateX(10px) translateY(70px) rotate(-45deg);
+    transition-duration: .7s;
+}
+
+#MenuButton-line2.closeMenu {
+    transform: translateX(120px);
+    transition-duration: .7s;
+}
+
+#MenuButton-line3.closeMenu {
+    transform: translateX(60px) translateY(-40px) rotate(45deg);
+    transition-duration: .7s;
+}
+
+#MenuButton-line1.openMenu {
+    transition-duration: .7s;
+}
+
+#MenuButton-line2.openMenu {
+    transition-duration: .7s;
+}
+
+#MenuButton-line3.openMenu {
+    transition-duration: .7s;
+}
+
+
+
+.MenuButton:hover #MenuButton-line1.openMenu {
+    transform: translateY(-5px);
+    transition-duration: .7s;
+}
+
+.MenuButton:active:hover #MenuButton-line1.openMenu {
+    transform: rotate(-5deg);
+    transition-duration: .7s;
+}
+
+
+.MenuButton:hover #MenuButton-line3.openMenu {
+    transform: translateY(5px);
+    transition-duration: .7s;
+}
+
+.MenuButton:active:hover #MenuButton-line3.openMenu {
+    transform: translateX(5px) rotate(5deg);
+    transition-duration: .7s;
+}
+
+.MenuButton:active:hover #MenuButton-line1.closeMenu {
+    transform: translateX(10px) translateY(65px) rotate(-40deg);
+    transition-duration: .7s;
+}
+
+.MenuButton:active:hover #MenuButton-line3.closeMenu {
+    transform: translateX(60px) translateY(-40px) rotate(40deg);
+    transition-duration: .7s;
 }

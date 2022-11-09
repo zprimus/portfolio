@@ -27,10 +27,22 @@
     font-size: medium;
     font-weight: bold;
 }
+@keyframes bounce {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-5px);
+    }
+}
 
 #selected {
     background-color: #66FCF1; 
     color: #0B0C10;
+    animation-duration: 0.2s;
+    animation-name: bounce;
+    animation-iteration-count: 4;
+    animation-direction: alternate;
 }
 
 #not_selected {

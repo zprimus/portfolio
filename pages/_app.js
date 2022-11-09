@@ -7,6 +7,7 @@
 
 // third party dependencies
 import React, { useState } from 'react';
+import Head from 'next/head'
 
 // custom components
 import MenuButton from '../components/MenuButton.js';
@@ -45,6 +46,14 @@ const MyApp = ({ Component, pageProps }) => {
 
   return (
     <div className='App'>
+      <Head>
+        <title>Zachary Primus</title>
+        <meta charset="UTF-8"/>
+        <meta name="keywords" content="HTML, CSS, JavaScript, NextJS, React, Software, Developer, Web, Zachary, Primus, Zac, zprimus, zacprimus"/>
+        <meta name="author" content="Zachary Primus"/>
+        <meta name="description" content="I'm an Engineer with a passion for Software Development. This is my portfolio to keep track of my journey throughout my career and in everyday life."/>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Component {...pageProps} />
       <div className="App-menubutton">
         <MenuButton

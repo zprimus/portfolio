@@ -12,36 +12,36 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import Pin from './Pin.js';
 
 const Map = () => {
-  const [viewport, setViewport] = useState({
+  const [viewState, setViewState] = useState({
     latitude: 17,
     longitude: 11,
     zoom: 2,
   });
 
-  const handleViewportChange = (newViewport) => {
-    setViewport(newViewport);
-    console.log(newViewport);
+  const handleViewState = (newViewState) => {
+    setViewState(newViewState);
   }
 
   return (
     <ReactMapGL
-      initialViewState={viewport}
+      {...viewState}
       minZoom={2}
       maxZoom={7}
       style={{
         width: '100vw',
         height: '100vh',
       }}
-      onMove={(nextViewport) => handleViewportChange(nextViewport)}
+      onMove={(e) => handleViewState(e.viewState)}
       mapboxAccessToken={process.env.MAPBOX_KEY}
       mapStyle={'mapbox://styles/mapbox/satellite-streets-v11'}
+      doubleClickZoom={false}
     >
       {
         locations.map((location) => (
           <div key={location.id}>
             <Pin
               location={location}
-              handleViewportChange={handleViewportChange}
+              handleViewState={handleViewState}
             />
           </div>
         ))

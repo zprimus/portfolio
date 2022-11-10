@@ -22,7 +22,7 @@ import '../styles/ExploreTemplate.css';
 import '../styles/globals.css';
 import '../styles/Home.css';
 import '../styles/HomeBackground.css';
-import '../styles/ImgSlider.css';
+import '../styles/ImgCarousel.css';
 import '../styles/Map.css';
 import '../styles/Menu.css';
 import '../styles/MenuButton.css';

@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FacebookButton, TwitterButton } from "react-social";
+import Image from 'next/image';
 
 // data
 import projects from '../../lib/projects.js';
@@ -41,10 +42,10 @@ const ProjectTemplate = ({host}) => {
                         <div className="ProjectTemplate-links-nolink">
                             <div className="ProjectTemplate-links-share">
                                 <FacebookButton id="facebook" url={url} appId={process.env.FB_KEY}>
-                                    <img src={'/icons/fb_icon.svg'} alt="Share to Facebook"/>
+                                    <Image src={'/icons/fb_icon.svg'} alt="Share to Facebook" width='50px' height='50px'/>
                                 </FacebookButton>
                                 <TwitterButton id="twitter" url={url} appId={process.env.TWIITER_KEY}>
-                                    <img src={'/icons/twitter_icon.svg'} alt="Share to Facebook"/>
+                                    <Image src={'/icons/twitter_icon.svg'} alt="Share to Facebook" width='50px' height='50px'/>
                                 </TwitterButton>
                             </div>
                         </div>
@@ -66,10 +67,10 @@ const ProjectTemplate = ({host}) => {
                             
                             <div className="ProjectTemplate-links-share">
                                 <button id="facebook">
-                                    <img src={'/icons/fb_icon.svg'} alt="Share to Facebook"/>
+                                    <Image src={'/icons/fb_icon.svg'} alt="Share to Facebook" width='50px' height='50px'/>
                                 </button>
                                 <button id="twitter">
-                                    <img src={'/icons/twitter_icon.svg'} alt="Share to Facebook"/>
+                                    <Image src={'/icons/twitter_icon.svg'} alt="Share to Facebook" width='50px' height='50px'/>
                                 </button>
                             </div>
                         </div>
@@ -89,7 +90,7 @@ const ProjectTemplate = ({host}) => {
                     <hr/>
                     {
                         project.desc.map((desc, index) => (
-                            <p key={index} style={{}}>{desc}</p>
+                            <p key={index}>{desc}</p>
                         ))
                     }
                 </section>
@@ -112,8 +113,8 @@ const ProjectTemplate = ({host}) => {
                         { 
                             project.resources.length !== 0 ?
                             (
-                                project.resources.map(resource => (
-                                    <li key={resource} style={{}}>{resource.text} <a href={resource.link} target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>{resource.link}</a></li>
+                                project.resources.map((resource, index) => (
+                                    <li key={index}>{resource.text} <a href={resource.link} target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>{resource.link}</a></li>
                                 ))
                             ) : (
                                 <li>N/A</li>

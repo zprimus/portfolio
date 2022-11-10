@@ -1,5 +1,6 @@
 // dependencies
 import { Popup } from 'react-map-gl';
+import Image from 'next/image';
 
 const PinPopup = ({location, location: { marker }}) => {
     return (
@@ -17,7 +18,7 @@ const PinPopup = ({location, location: { marker }}) => {
         >
             <div className='PinPopup'>
                 <h3>{marker.name}</h3>
-                <img 
+                <Image 
                     src={location.info.imgs[0].pic}
                     alt={location.info.imgs[0].alt}
                     height='100%'

@@ -1,11 +1,10 @@
 .App {
   align-items: center;
-  background-color: #0B0C10;
   display: flex;
   flex-basis: 100%;
   flex-direction: column;
   min-height: 100vh;
-  color: #F3F3F3;
+  background-color: #0B0C10;
 }
 
 .App-menubutton {
@@ -26,20 +25,18 @@
   border: 0px;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   color: #66FCF1;
-}
-
-h5 {
-  color: #0B0C10
 }
 
 li {
   font-size: larger;
+  color: #F3F3F3;
 }
 
 p {
   font-size: larger;
+  color: #F3F3F3;
 }
 
 @media (max-width: 800px) {

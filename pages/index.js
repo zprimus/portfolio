@@ -12,7 +12,10 @@ const Home = () => {
         <h1>{"Hi, my name is Zachary Primus."}</h1>
         <br/>
         <p>
-          {"I'm an Engineer with a passion for Software Development. My current focus is creating high-impact web and mobile apps."}
+          {"I'm an engineer with a passion for software development."}
+        </p>
+        <p>
+          {"My current focus is creating responsive web/mobile applications with high traffic to obtain lasting results."}
         </p>
         <p>
           {"Check out my previous experiences!"}

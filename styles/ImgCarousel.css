@@ -1,17 +1,17 @@
-.ImgSlider-img {
+.ImgCarousel-img {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 450px;
+    width: 100%;
     overflow: hidden;
 }
 
-.ImgSlider-slider-bullets {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: auto;
+.ImgCarousel-bullets {
+    height: 5px;
+    width: 5px;
+    background-color: #C5C6C7;
 }
 
 #outer-circle {

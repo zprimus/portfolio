@@ -1,1 +1,18 @@
+.Map-desc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 3%;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-color: #EB6440;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    pointer-events: none;
+}
 
+.Map-desc p {
+    color: #EB6440;
+    font-size: small;
+} 

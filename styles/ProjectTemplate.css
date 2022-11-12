@@ -1,14 +1,8 @@
 .ProjectTemplate {
-    min-height: 90vh;
-    width: 1000px;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-}
-
-@media (max-width: 1000px) {
-    .ProjectTemplate {
-        width: 80vw;
-    }
+    min-height: 100vh;
+    max-width: 1000px;
+    padding: 10vh;
+    background-color: #497174;
 }
 
 .ProjectTemplate-backbutton {
@@ -57,6 +51,12 @@
     align-self: flex-end;
 }
 
+.ProjectTemplate-links-link button {
+    color: #EFF5F5;
+    background-color: #497174;
+    border-color: #EB6440;
+}
+
 .ProjectTemplate-links-share {
     display: flex;
     flex-direction: row;
@@ -64,10 +64,15 @@
 }
 
 .ProjectTemplate-links-share button {
+    display: flex;
+    justify-self: center;
+    align-items: center;
     height: 50px;
     width: 50px;
+    border-color: #D6E4E5;
     background-color: transparent;
     border-radius: 10px;
+    margin-left: 10px;
 }
 
 hr {

@@ -1,17 +1,8 @@
 .ExploreTemplate {
-    min-height: 90vh;
-    width: 800px;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-}
-
-@media (max-width: 1000px) {
-    .ExploreTemplate {
-        min-height: 90vh;
-        width: 80vw;
-        padding-top: 5vh;
-        padding-bottom: 5vh;
-    }
+    min-height: 100vh;
+    max-width: 1000px;
+    padding: 10vh;
+    background-color: #497174;
 }
 
 .ExploreTemplate-info {

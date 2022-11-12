@@ -58,7 +58,7 @@ const Projects = () => {
             <ProjectTile
               name={project.name}
               pics={project.pics}
-              pic_desc={project.pic_desc}
+              skills={project.skills}
             />
           </div>
         </Link>
@@ -82,10 +82,6 @@ const Projects = () => {
       <div className="Projects-tile-container">
         {renderProjectTiles()}
       </div>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
     </div>
   );
 }

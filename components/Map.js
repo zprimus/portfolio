@@ -23,30 +23,42 @@ const Map = () => {
   }
 
   return (
-    <ReactMapGL
-      {...viewState}
-      minZoom={2}
-      maxZoom={7}
-      style={{
-        width: '100vw',
-        height: '100vh',
-      }}
-      onMove={(e) => handleViewState(e.viewState)}
-      mapboxAccessToken={process.env.MAPBOX_KEY}
-      mapStyle={'mapbox://styles/mapbox/satellite-streets-v11'}
-      doubleClickZoom={false}
-    >
-      {
-        locations.map((location) => (
-          <div key={location.id}>
-            <Pin
-              location={location}
-              handleViewState={handleViewState}
-            />
-          </div>
-        ))
-      }
-    </ReactMapGL>
+    <>
+      <ReactMapGL
+        {...viewState}
+        minZoom={2}
+        maxZoom={7}
+        style={{
+          width: '100vw',
+          height: '100vh',
+        }}
+        onMove={(e) => handleViewState(e.viewState)}
+        mapboxAccessToken={process.env.MAPBOX_KEY}
+        mapStyle={'mapbox://styles/mapbox/light-v9'}
+        doubleClickZoom={false}
+      >
+        {
+          locations.map((location) => (
+            <div key={location.id}>
+              <Pin
+                location={location}
+                handleViewState={handleViewState}
+              />
+            </div>
+          ))
+        }
+      </ReactMapGL>
+      <div
+        className="Map-desc"
+      >
+        <p>
+          {"Select a place that I've explored"}
+        </p>
+        <p>
+          {"to find out more!"}
+        </p>
+    </div>
+    </>
   );
 }
 

@@ -1,12 +1,11 @@
 .MenuButton {
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .MenuButton rect {
     width: 100px;
     height: 15px;
+    background-color: #497174;
 }
 
 .MenuButton:hover {

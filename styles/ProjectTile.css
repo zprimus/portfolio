@@ -2,16 +2,79 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1F2833;
+    background-color: #D6E4E5;
     height: 30px;
+    z-index: 1;
 }
 
 .ProjectTile-thumbnail {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
     height: calc(100% - 30px);
     width: 100%;
-    overflow:hidden;
+}
+
+.ProjectTile-thumbnail-dropdown {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    transition-duration: .7s;
+    overflow: hidden;
+}
+
+
+.ProjectTile-thumbnail-dropdown-skills {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition-duration: .7s;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+#skills {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+
+#more {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: 8px;
+    border-radius: 5px;
+    font-size: small;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #497174; 
+    color: #EFF5F5;
+    border-color: #EB6440;
+    pointer-events:none;
+}
+
+.ProjectTile-header:hover .ProjectTile-thumbnail-dropdown,
+.ProjectTile-thumbnail:hover .ProjectTile-thumbnail-dropdown,
+.ProjectTile-dropdown:hover .ProjectTile-thumbnail-dropdown {
+    transform: translate(0,  calc(100%));
+    transition-duration: .7s;
 }

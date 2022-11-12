@@ -52,7 +52,7 @@ const ProjectTemplate = ({host}) => {
                     ) : (
                         <div className="ProjectTemplate-links">
                                 <div className="ProjectTemplate-links-link">
-                                    <Link href="/" style={{ textDecoration: 'none' }}>
+                                    <Link href="/">
                                         <button
                                             style={{
                                                 padding: "5px",

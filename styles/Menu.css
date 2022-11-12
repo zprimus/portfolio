@@ -4,35 +4,27 @@
     position: fixed;
     top: 0;
     left: 0;
-    transition: transform 0.7s
-                cubic-bezier(0, .52, 0, 1);
     overflow: hidden;
-    z-index: 1000;
-
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 100;
-    background-color: #1F2833;
+    background-color: #497174;
 }
 
-#Menu p {
-    color: #C5C6C7;
-}
 
 #Menu.hide {
-    transform: translate3d(0, -100vh, 0);
+    transform: translate(0, -100vh);
+    transition-duration: 0.7s;
 }
 
 #Menu.show {
-    transform: translate3d(0vw, 0, 0);
+    transform: translate(0, 0);
+    transition-duration: 0.7s;
     overflow: hidden;
-    opacity: 1;
 }
 
 .Menu-link {
-    background-color: black;
-    color: #66FCF1;
     margin: 10px;
     height: 10vh;
     width: 30vw;
@@ -40,7 +32,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-    background-color: #0B0C10;
+    background-color: #D6E4E5;
 }
 
 .Menu-link:hover {

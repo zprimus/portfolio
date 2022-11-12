@@ -5,18 +5,19 @@ const MenuButton = ({showMenu, handleClickMenu}) => {
     return (
         <div 
             className="MenuButton" 
-            onMouseUp={() => handleClickMenu()}
         >
             <svg 
-                viewBox="0 0 100 80" 
-                width="40" 
-                height="40"
+                viewBox="0 -13 100 100" 
+                width="50" 
+                height="40" 
+                onMouseUp={() => handleClickMenu()}
             >
                 <rect 
                     className={showMenu ? "closeMenu" : "openMenu"}
                     id="MenuButton-line1" 
                     rx="15" 
-                    stroke="#66FCF1" 
+                    fill="transparent"
+                    stroke="#EB6440"
                     strokeWidth="5"
                 ></rect>
                 <rect 
@@ -24,7 +25,8 @@ const MenuButton = ({showMenu, handleClickMenu}) => {
                     id="MenuButton-line2" 
                     rx="15" 
                     y="30" 
-                    stroke="#66FCF1" 
+                    fill="transparent"
+                    stroke="#EB6440"
                     strokeWidth="5"
                 ></rect>
                 <rect 
@@ -32,7 +34,8 @@ const MenuButton = ({showMenu, handleClickMenu}) => {
                     id="MenuButton-line3" 
                     rx="15" 
                     y="60" 
-                    stroke="#66FCF1" 
+                    fill="transparent"
+                    stroke="#EB6440"
                     strokeWidth="5"
                 ></rect>
             </svg>

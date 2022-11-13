@@ -1,11 +1,10 @@
 /*
-Colors:
+  Colors:
 
-#EFF5F5
-#D6E4E5
-#497174
-#EB6440
-
+  #EFF5F5
+  #D6E4E5
+  #497174
+  #EB6440
 */
 
 .App {
@@ -21,7 +20,7 @@ Colors:
   position: fixed;
   right: 0;
   top: 0;
-  padding: 3%;
+  padding: 2em;
   z-index: 3;
 }
 

@@ -6,12 +6,13 @@
 */
 
 // third party dependencies
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head'
 
 // custom components
 import MenuButton from '../components/MenuButton.js';
 import Menu from '../components/Menu.js';
+import SplashPage from '../components/SplashPage.js';
 
 // styles
 import '../styles/App.css';
@@ -31,10 +32,22 @@ import '../styles/Projects.css';
 import '../styles/ProjectTemplate.css';
 import '../styles/ProjectTile.css';
 import '../styles/SocialBar.css';
+import '../styles/SplashPage.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const MyApp = ({ Component, pageProps }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const [showSplash, setShowSplash] = useState(false);
+
+  let typeOfWindow = typeof window;
+
+  useEffect(() => {
+    if (typeOfWindow === 'undefined') {
+      setShowSplash(true);
+    } else {
+      setShowSplash(false);
+    }
+  }, [typeOfWindow]);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -54,6 +67,10 @@ const MyApp = ({ Component, pageProps }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Component {...pageProps} />
+      {
+        showSplash &&
+        <SplashPage/>
+      }
       <div className="App-menubutton">
         <MenuButton
           handleClickMenu={handleClickMenu}

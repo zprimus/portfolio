@@ -1,6 +1,6 @@
 .Home {
   height: 100vh;
-  min-width: 100vw;
+  min-width: 80vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +18,7 @@
 .Home-body {
   width: 800px;
   z-index: 1;
-  margin: 40px;
+  padding: 5%;
 }
 
 .Home-body h1 {
@@ -40,6 +40,14 @@
 
   .Home-body {
     width: 80vw;
+  }
+
+  .Home-body h1 {
+    font-size: 40px;
+  }
+
+  .Home-body p {
+    font-size: 20px;
   }
 } 
 

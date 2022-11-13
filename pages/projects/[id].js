@@ -93,10 +93,11 @@ const ProjectTemplate = ({host}) => {
                             <p key={index}>{desc}</p>
                         ))
                     }
+                    <br/>
                 </section>
                 <section>
                     <h2>Technical Sheet</h2>
-                    <p>Technologies and skills that I used for the project.</p>
+                    <p>Technologies and skills that I used for this project.</p>
                     <hr/>
                     <ul>
                         {
@@ -105,6 +106,7 @@ const ProjectTemplate = ({host}) => {
                             ))
                         }
                     </ul>
+                    <br/>
                 </section>
                 <section>
                     <h2>Resources</h2>
@@ -121,6 +123,7 @@ const ProjectTemplate = ({host}) => {
                             )
                         }
                     </ul>
+                    <br/>
                 </section>
             </div>
         </div>

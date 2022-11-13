@@ -1,7 +1,7 @@
 .Projects {
     min-height: 100vh;
     max-width: 1000px;
-    padding: 10vh;
+    padding: 5em;
     background-color: #497174;
 }
 
@@ -85,7 +85,15 @@
 }
 
 @media (min-width: 1000px) {
+
     .Projects-tile-container {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .Projects-tile {
+        width: 260px;
+        height: 180px;
     }
 }

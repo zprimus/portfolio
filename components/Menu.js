@@ -23,10 +23,10 @@ const Menu = ({showMenu, handleClickMenu}) => {
                         <h2>Explore</h2>
                     </div>
                 </Link>
-                <p>
-                    Feel free to contact me at <b>zachary_primus@yahoo.com</b>
-                </p>
             </div>
+            <p>
+                Feel free to contact me at <b>zachary_primus@yahoo.com</b>
+            </p>
         </nav>
     )
 }
